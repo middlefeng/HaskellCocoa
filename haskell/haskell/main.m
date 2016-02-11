@@ -18,6 +18,8 @@ int main(int argc, const char * argv[])
     HsInt x = triple(3);
     printf("Result: %ld.\n", x);
     
+    showTripe(4);
+    
     int result = NSApplicationMain(argc, argv);
     hs_exit();
     return result;
