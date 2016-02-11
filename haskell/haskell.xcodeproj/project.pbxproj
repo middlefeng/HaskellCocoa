@@ -13,6 +13,7 @@
 		983F33281C6C025900BB4A75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983F33271C6C025900BB4A75 /* Assets.xcassets */; };
 		983F332B1C6C025900BB4A75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983F33291C6C025900BB4A75 /* Main.storyboard */; };
 		983F33351C6C0AFF00BB4A75 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 983F33341C6C0AFF00BB4A75 /* libiconv.tbd */; };
+		983F333E1C6C0EF300BB4A75 /* HaskellExt.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 983F333D1C6C0EF300BB4A75 /* HaskellExt.o */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		983F332A1C6C025900BB4A75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		983F332C1C6C025900BB4A75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		983F33341C6C0AFF00BB4A75 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		983F333C1C6C0E8000BB4A75 /* HaskellExt_stub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HaskellExt_stub.h; path = ../HaskellExt_stub.h; sourceTree = "<group>"; };
+		983F333D1C6C0EF300BB4A75 /* HaskellExt.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HaskellExt.o; path = ../HaskellExt.o; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +37,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				983F33351C6C0AFF00BB4A75 /* libiconv.tbd in Frameworks */,
+				983F333E1C6C0EF300BB4A75 /* HaskellExt.o in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,9 +47,10 @@
 		983F33121C6C025900BB4A75 = {
 			isa = PBXGroup;
 			children = (
-				983F33341C6C0AFF00BB4A75 /* libiconv.tbd */,
-				983F331D1C6C025900BB4A75 /* haskell */,
+				983F333B1C6C0E7900BB4A75 /* haskell */,
+				983F331D1C6C025900BB4A75 /* src */,
 				983F331C1C6C025900BB4A75 /* Products */,
+				983F33361C6C0D7F00BB4A75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,7 +62,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		983F331D1C6C025900BB4A75 /* haskell */ = {
+		983F331D1C6C025900BB4A75 /* src */ = {
 			isa = PBXGroup;
 			children = (
 				983F331E1C6C025900BB4A75 /* AppDelegate.h */,
@@ -69,6 +74,7 @@
 				983F332C1C6C025900BB4A75 /* Info.plist */,
 				983F33211C6C025900BB4A75 /* Supporting Files */,
 			);
+			name = src;
 			path = haskell;
 			sourceTree = "<group>";
 		};
@@ -78,6 +84,23 @@
 				983F33221C6C025900BB4A75 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		983F33361C6C0D7F00BB4A75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				983F333D1C6C0EF300BB4A75 /* HaskellExt.o */,
+				983F33341C6C0AFF00BB4A75 /* libiconv.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		983F333B1C6C0E7900BB4A75 /* haskell */ = {
+			isa = PBXGroup;
+			children = (
+				983F333C1C6C0E8000BB4A75 /* HaskellExt_stub.h */,
+			);
+			name = haskell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
