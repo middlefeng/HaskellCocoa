@@ -15,6 +15,7 @@
 		983F33351C6C0AFF00BB4A75 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 983F33341C6C0AFF00BB4A75 /* libiconv.tbd */; };
 		983F333E1C6C0EF300BB4A75 /* HaskellExt.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 983F333D1C6C0EF300BB4A75 /* HaskellExt.o */; };
 		983F33401C6C11E900BB4A75 /* HaskellExt.c in Sources */ = {isa = PBXBuildFile; fileRef = 983F333F1C6C11E900BB4A75 /* HaskellExt.c */; };
+		983F33421C6C51C400BB4A75 /* HaskellExt_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F33411C6C51C400BB4A75 /* HaskellExt_UI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		983F333C1C6C0E8000BB4A75 /* HaskellExt_stub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HaskellExt_stub.h; path = ../HaskellExt_stub.h; sourceTree = "<group>"; };
 		983F333D1C6C0EF300BB4A75 /* HaskellExt.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HaskellExt.o; path = ../HaskellExt.o; sourceTree = "<group>"; };
 		983F333F1C6C11E900BB4A75 /* HaskellExt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HaskellExt.c; path = haskell/HaskellExt.c; sourceTree = "<group>"; };
+		983F33411C6C51C400BB4A75 /* HaskellExt_UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaskellExt_UI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				983F333C1C6C0E8000BB4A75 /* HaskellExt_stub.h */,
 				983F333F1C6C11E900BB4A75 /* HaskellExt.c */,
+				983F33411C6C51C400BB4A75 /* HaskellExt_UI.m */,
 			);
 			name = haskell;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				983F33421C6C51C400BB4A75 /* HaskellExt_UI.m in Sources */,
 				983F33261C6C025900BB4A75 /* ViewController.m in Sources */,
 				983F33231C6C025900BB4A75 /* main.m in Sources */,
 				983F33401C6C11E900BB4A75 /* HaskellExt.c in Sources */,

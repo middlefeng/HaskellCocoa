@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HaskellExt_stub.h"
 
 @implementation ViewController
 
@@ -20,6 +21,12 @@
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
+}
+
+
+- (IBAction)showAlert:(id)sender
+{
+    showAlertHaskell();
 }
 
 @end
