@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C338FB41C6FDCDD003A138A /* HNSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C338FB31C6FDCDD003A138A /* HNSObject.m */; };
+		2C338FB61C6FDE78003A138A /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C338FB51C6FDE78003A138A /* libiconv.dylib */; };
 		983F33201C6C025900BB4A75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F331F1C6C025900BB4A75 /* AppDelegate.m */; };
 		983F33231C6C025900BB4A75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F33221C6C025900BB4A75 /* main.m */; };
 		983F33261C6C025900BB4A75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F33251C6C025900BB4A75 /* ViewController.m */; };
 		983F33281C6C025900BB4A75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983F33271C6C025900BB4A75 /* Assets.xcassets */; };
 		983F332B1C6C025900BB4A75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983F33291C6C025900BB4A75 /* Main.storyboard */; };
-		983F33351C6C0AFF00BB4A75 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 983F33341C6C0AFF00BB4A75 /* libiconv.tbd */; };
 		983F333E1C6C0EF300BB4A75 /* HaskellExt.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 983F333D1C6C0EF300BB4A75 /* HaskellExt.o */; };
 		983F33401C6C11E900BB4A75 /* HaskellExt.c in Sources */ = {isa = PBXBuildFile; fileRef = 983F333F1C6C11E900BB4A75 /* HaskellExt.c */; };
 		983F33421C6C51C400BB4A75 /* HaskellExt_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F33411C6C51C400BB4A75 /* HaskellExt_UI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C338FB21C6FDCDD003A138A /* HNSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSObject.h; sourceTree = "<group>"; };
+		2C338FB31C6FDCDD003A138A /* HNSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSObject.m; sourceTree = "<group>"; };
+		2C338FB51C6FDE78003A138A /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		983F331B1C6C025900BB4A75 /* haskell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haskell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983F331E1C6C025900BB4A75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		983F331F1C6C025900BB4A75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -28,7 +32,6 @@
 		983F33271C6C025900BB4A75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		983F332A1C6C025900BB4A75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		983F332C1C6C025900BB4A75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		983F33341C6C0AFF00BB4A75 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		983F333C1C6C0E8000BB4A75 /* HaskellExt_stub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HaskellExt_stub.h; path = ../HaskellExt_stub.h; sourceTree = "<group>"; };
 		983F333D1C6C0EF300BB4A75 /* HaskellExt.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HaskellExt.o; path = ../HaskellExt.o; sourceTree = "<group>"; };
 		983F333F1C6C11E900BB4A75 /* HaskellExt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HaskellExt.c; path = haskell/HaskellExt.c; sourceTree = "<group>"; };
@@ -40,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				983F33351C6C0AFF00BB4A75 /* libiconv.tbd in Frameworks */,
+				2C338FB61C6FDE78003A138A /* libiconv.dylib in Frameworks */,
 				983F333E1C6C0EF300BB4A75 /* HaskellExt.o in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,9 +51,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C0699611C6FDC0600850613 /* Haskell-Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				2C338FB21C6FDCDD003A138A /* HNSObject.h */,
+				2C338FB31C6FDCDD003A138A /* HNSObject.m */,
+			);
+			name = "Haskell-Cocoa";
+			path = ../HaskellCocoa;
+			sourceTree = "<group>";
+		};
 		983F33121C6C025900BB4A75 = {
 			isa = PBXGroup;
 			children = (
+				2C0699611C6FDC0600850613 /* Haskell-Cocoa */,
 				983F333B1C6C0E7900BB4A75 /* haskell */,
 				983F331D1C6C025900BB4A75 /* src */,
 				983F331C1C6C025900BB4A75 /* Products */,
@@ -93,8 +107,8 @@
 		983F33361C6C0D7F00BB4A75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C338FB51C6FDE78003A138A /* libiconv.dylib */,
 				983F333D1C6C0EF300BB4A75 /* HaskellExt.o */,
-				983F33341C6C0AFF00BB4A75 /* libiconv.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -182,6 +196,7 @@
 				983F33261C6C025900BB4A75 /* ViewController.m in Sources */,
 				983F33231C6C025900BB4A75 /* main.m in Sources */,
 				983F33401C6C11E900BB4A75 /* HaskellExt.c in Sources */,
+				2C338FB41C6FDCDD003A138A /* HNSObject.m in Sources */,
 				983F33201C6C025900BB4A75 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
