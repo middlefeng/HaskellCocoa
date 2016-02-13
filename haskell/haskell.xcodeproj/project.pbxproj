@@ -287,21 +287,21 @@
 				INFOPLIST_FILE = haskell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"/Library/Frameworks/GHC.framework/Versions/7.10.2-x86_64/usr/lib/ghc-7.10.2/rts",
-					"/Library/Frameworks/GHC.framework/Versions/7.10.2-x86_64/usr/lib/ghc-7.10.2/base_GDytRqRVSUX7zckgKqJjgw",
-					"/Library/Frameworks/GHC.framework/Versions/7.10.2-x86_64/usr/lib/ghc-7.10.2/ghcpr_8TmvWUcS1U1IKHT0levwg3",
-					"/Library/Frameworks/GHC.framework/Versions/7.10.2-x86_64/usr/lib/ghc-7.10.2/integ_2aU3IZNMF9a7mQ0OzsZ0dS",
+					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/rts",
+					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/base_HQfYBxpPvuw8OunzQu6JGM",
+					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/ghcpr_8TmvWUcS1U1IKHT0levwg3",
+					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/integ_2aU3IZNMF9a7mQ0OzsZ0dS",
 				);
 				OTHER_LDFLAGS = (
 					"-lCffi",
 					"-lHSrts",
-					"-lHSbase-4.8.1.0-GDytRqRVSUX7zckgKqJjgw",
+					"-lHSbase-4.8.2.0-HQfYBxpPvuw8OunzQu6JGM",
 					"-lHSinteger-gmp-1.0.0.0-2aU3IZNMF9a7mQ0OzsZ0dS",
 					"-lHSghc-prim-0.4.0.0-8TmvWUcS1U1IKHT0levwg3",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fengdong.haskell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/Library/Frameworks/GHC.framework/Versions/Current/usr/lib/ghc-7.10.2/include";
+				USER_HEADER_SEARCH_PATHS = "~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/include";
 			};
 			name = Debug;
 		};
@@ -313,21 +313,21 @@
 				INFOPLIST_FILE = haskell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"/Library/Frameworks/GHC.framework/Versions/7.10.2-x86_64/usr/lib/ghc-7.10.2/rts",
-					"/Library/Frameworks/GHC.framework/Versions/7.10.2-x86_64/usr/lib/ghc-7.10.2/base_GDytRqRVSUX7zckgKqJjgw",
-					"/Library/Frameworks/GHC.framework/Versions/7.10.2-x86_64/usr/lib/ghc-7.10.2/ghcpr_8TmvWUcS1U1IKHT0levwg3",
-					"/Library/Frameworks/GHC.framework/Versions/7.10.2-x86_64/usr/lib/ghc-7.10.2/integ_2aU3IZNMF9a7mQ0OzsZ0dS",
+					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/rts",
+					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/base_HQfYBxpPvuw8OunzQu6JGM",
+					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/ghcpr_8TmvWUcS1U1IKHT0levwg3",
+					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/integ_2aU3IZNMF9a7mQ0OzsZ0dS",
 				);
 				OTHER_LDFLAGS = (
 					"-lCffi",
 					"-lHSrts",
-					"-lHSbase-4.8.1.0-GDytRqRVSUX7zckgKqJjgw",
+					"-lHSbase-4.8.2.0-HQfYBxpPvuw8OunzQu6JGM",
 					"-lHSinteger-gmp-1.0.0.0-2aU3IZNMF9a7mQ0OzsZ0dS",
 					"-lHSghc-prim-0.4.0.0-8TmvWUcS1U1IKHT0levwg3",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fengdong.haskell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/Library/Frameworks/GHC.framework/Versions/Current/usr/lib/ghc-7.10.2/include";
+				USER_HEADER_SEARCH_PATHS = "~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/include";
 			};
 			name = Release;
 		};
@@ -350,6 +350,7 @@
 				983F33311C6C025900BB4A75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
