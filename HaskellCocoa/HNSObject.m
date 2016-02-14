@@ -36,7 +36,7 @@ void hns_retain(id obj)
 
 
 
-void hns_release(id* obj)
+void hns_release(id obj)
 {
     NSNumber* asKey = [NSNumber numberWithLongLong:(long long)obj];
     NSMutableArray* asValue = sHNSRoots[asKey];
@@ -49,6 +49,24 @@ void hns_release(id* obj)
     else
         [asValue removeLastObject];
 }
+
+
+
+void ns_retain(HsPtr obj)
+{
+    id pObj = (__bridge id)obj;
+    hns_retain(pObj);
+}
+
+
+
+void ns_release(HsPtr obj)
+{
+    id pObj = (__bridge id)obj;
+    hns_retain(pObj);
+}
+
+
 
 
 

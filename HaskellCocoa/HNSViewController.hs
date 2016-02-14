@@ -4,25 +4,38 @@
 
 
 
-module HNSViewController where
+module HNSViewController
+(
+    HNSViewController
+,   HNSViewControllerObj(..)
+,   nsViewController_view
+)
+where
 
 
 
 import Foreign
+import HNSObject
 import HNSView
 
 
 
-data HNSViewController = HNSViewController
+class (HNSObject a) => HNSViewController a where
+
+    nsViewController_view :: Ptr a -> IO (Ptr HNSViewObj)
+
+
+data HNSViewControllerObj = HNSViewControllerObj
+
+instance HNSObject HNSViewControllerObj where
+
+instance HNSViewController HNSViewControllerObj where
+
+    nsViewController_view = hns_viewController_view
 
 
 
-
-nsViewController_view :: (Ptr HNSViewController) -> IO (Ptr HNSView)
-
-
-
-foreign import ccall nsViewController_view :: (Ptr HNSViewController) -> IO (Ptr HNSView)
+foreign import ccall hns_viewController_view :: Ptr a -> IO (Ptr b)
 
 
 

@@ -11,4 +11,4 @@
 #include "HsFFI.h"
 
 
-extern HsPtr nsViewController_view(HsPtr viewController);
+extern HsPtr hns_viewController_view(HsPtr viewController);

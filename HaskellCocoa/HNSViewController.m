@@ -10,7 +10,7 @@
 
 
 
-HsPtr nsViewController_view(HsPtr viewController)
+HsPtr hns_viewController_view(HsPtr viewController)
 {
     NSViewController* pVC = (__bridge NSViewController*)viewController;
     return (__bridge HsPtr)(pVC.view);

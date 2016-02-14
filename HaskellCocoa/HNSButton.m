@@ -12,7 +12,7 @@
 #import "HNSButton.h"
 
 
-HsPtr hns_createButton()
+HsPtr hns_buttonCreate()
 {
     NSButton* button = [[NSButton alloc] init];
     hns_retain(button);

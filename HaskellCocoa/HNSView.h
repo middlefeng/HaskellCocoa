@@ -11,5 +11,5 @@
 #include "HsFFI.h"
 
 
-extern HsPtr hns_buttonCreate();
-
+extern void hns_addSubview(HsPtr view, HsPtr subview);
+extern void hns_removeFromSuperview(HsPtr view);
