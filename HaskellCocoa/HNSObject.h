@@ -11,8 +11,3 @@
 
 extern void hns_init();
 
-
-
-@interface HNSObject : NSObject
-
-@end

@@ -13,12 +13,6 @@ static NSMutableDictionary* sHNSRoots;
 
 
 
-@implementation HNSObject
-
-@end
-
-
-
 
 void hns_init()
 {
@@ -27,7 +21,7 @@ void hns_init()
 
 
 
-void hns_retain(HNSObject* obj)
+void hns_retain(id obj)
 {
     NSNumber* asKey = [NSNumber numberWithLongLong:(long long)obj];
     NSMutableArray* asValue = sHNSRoots[asKey];
@@ -42,7 +36,7 @@ void hns_retain(HNSObject* obj)
 
 
 
-void hns_release(HNSObject* obj)
+void hns_release(id* obj)
 {
     NSNumber* asKey = [NSNumber numberWithLongLong:(long long)obj];
     NSMutableArray* asValue = sHNSRoots[asKey];

@@ -8,18 +8,30 @@
 
 #import "ViewController.h"
 #import "HaskellExt_stub.h"
+#import "ViewController_stub.h"
 
 @implementation ViewController
+
+
+- (void)loadView
+{
+    [super loadView];
+    viewController_loadView((__bridge HsPtr)(self));
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    viewController_viewLoaded((__bridge HsPtr)(self));
 }
+
 
 - (void)setRepresentedObject:(id)representedObject
 {
     [super setRepresentedObject:representedObject];
 }
+
 
 - (IBAction)showAlert:(id)sender
 {
