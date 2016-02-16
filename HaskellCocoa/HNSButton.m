@@ -12,7 +12,7 @@
 #import "HNSButton.h"
 
 
-HsPtr hns_buttonCreate()
+HsPtr hns_ButtonCreate()
 {
     NSButton* button = [[NSButton alloc] init];
     hns_retain(button);
@@ -20,3 +20,9 @@ HsPtr hns_buttonCreate()
 }
 
 
+
+void hns_Button_setTitle(HsPtr button, char* title)
+{
+    NSButton* pButton = (__bridge NSButton*)button;
+    [pButton setTitle:[NSString stringWithUTF8String:title]];
+}

@@ -8,6 +8,7 @@ module ViewController where
 
 
 import Foreign
+import HNSView
 import HNSViewController
 import HNSButton
 
@@ -21,7 +22,10 @@ viewController_loadView viewController =
                             do
                                 view <- nsViewController_view viewController
                                 button <- nsButtonCreate
-                                return ()
+                                nsButton_setTitle button "Test Button"
+                                nsView_setFrame button (HNSRect 10 10 100 20)
+                                nsView_addSubview view button
+
 
 
 

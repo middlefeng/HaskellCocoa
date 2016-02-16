@@ -11,5 +11,4 @@
 #include "HsFFI.h"
 
 
-extern HsPtr hns_buttonCreate();
 

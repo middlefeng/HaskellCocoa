@@ -11,5 +11,5 @@
 #include "HsFFI.h"
 
 
-extern void hns_addSubview(HsPtr view, HsPtr subview);
-extern void hns_removeFromSuperview(HsPtr view);
+extern void hns_view_addSubview(HsPtr view, HsPtr subview);
+extern void hns_view_removeFromSuperview(HsPtr view);
