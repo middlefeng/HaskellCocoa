@@ -1,4 +1,5 @@
 *.o
 *.hi
 *_stub.h
+*middleware*
 
