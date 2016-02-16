@@ -13,6 +13,7 @@
 		2C338FC11C7058EB003A138A /* HNSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C338FC01C7058EB003A138A /* HNSViewController.m */; };
 		2C338FC41C705C99003A138A /* HNSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C338FC31C705C99003A138A /* HNSButton.m */; };
 		2C338FC71C705D83003A138A /* HNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C338FC61C705D83003A138A /* HNSView.m */; };
+		2C338FCA1C706F71003A138A /* HNSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C338FC91C706F71003A138A /* HNSColor.m */; };
 		983F33201C6C025900BB4A75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F331F1C6C025900BB4A75 /* AppDelegate.m */; };
 		983F33231C6C025900BB4A75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F33221C6C025900BB4A75 /* main.m */; };
 		983F33261C6C025900BB4A75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F33251C6C025900BB4A75 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 		2C338FC31C705C99003A138A /* HNSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSButton.m; sourceTree = "<group>"; };
 		2C338FC51C705D83003A138A /* HNSView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSView.h; sourceTree = "<group>"; };
 		2C338FC61C705D83003A138A /* HNSView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSView.m; sourceTree = "<group>"; };
+		2C338FC81C706F71003A138A /* HNSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSColor.h; sourceTree = "<group>"; };
+		2C338FC91C706F71003A138A /* HNSColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSColor.m; sourceTree = "<group>"; };
 		983F331B1C6C025900BB4A75 /* haskell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haskell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983F331E1C6C025900BB4A75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		983F331F1C6C025900BB4A75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 				2C338FC61C705D83003A138A /* HNSView.m */,
 				2C338FC21C705C99003A138A /* HNSButton.h */,
 				2C338FC31C705C99003A138A /* HNSButton.m */,
+				2C338FC81C706F71003A138A /* HNSColor.h */,
+				2C338FC91C706F71003A138A /* HNSColor.m */,
 				2C338FB21C6FDCDD003A138A /* HNSObject.h */,
 				2C338FB31C6FDCDD003A138A /* HNSObject.m */,
 			);
@@ -225,6 +230,7 @@
 				983F33421C6C51C400BB4A75 /* HaskellExt_UI.m in Sources */,
 				983F33261C6C025900BB4A75 /* ViewController.m in Sources */,
 				2C338FC11C7058EB003A138A /* HNSViewController.m in Sources */,
+				2C338FCA1C706F71003A138A /* HNSColor.m in Sources */,
 				2C338FC41C705C99003A138A /* HNSButton.m in Sources */,
 				983F33231C6C025900BB4A75 /* main.m in Sources */,
 				983F33401C6C11E900BB4A75 /* HaskellExt.c in Sources */,
