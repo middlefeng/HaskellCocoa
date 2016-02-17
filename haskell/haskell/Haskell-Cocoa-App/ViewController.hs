@@ -29,6 +29,7 @@ viewController_loadView viewController =
                                     view <- nsViewController_view viewController
                                     viewFrame <- nsView_frame view
                                     button <- nsButtonCreate
+                                    nsButton_setBezelStyle button HNSRounded
                                     nsButton_setTitle button "Test Button"
                                     nsView_setFrame button (buttonFrame 100.0 30.0 viewFrame)
                                     nsView_addSubview view button
