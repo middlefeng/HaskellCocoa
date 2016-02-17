@@ -3,7 +3,7 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
 
 
-module HNSObject
+module Cocoa.AppKit.HNSObject
 (
     HNSObject
 )

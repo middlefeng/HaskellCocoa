@@ -5,7 +5,7 @@
 
 
 
-module HNSButton
+module Cocoa.AppKit.HNSButton
 (
     HNSButton
 ,   HNSButtonObj
@@ -17,8 +17,8 @@ where
 
 import Foreign
 import Foreign.C.String
-import HNSObject
-import HNSView
+import Cocoa.AppKit.HNSObject
+import Cocoa.AppKit.HNSView
 
 
 
@@ -33,7 +33,7 @@ class (HNSView a) => HNSButton a where
 
 
 
-data HNSButtonObj = HNSButtonObj
+data HNSButtonObj
 
 
 instance HNSObject HNSButtonObj where

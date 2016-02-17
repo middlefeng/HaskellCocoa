@@ -8,9 +8,9 @@ module ViewController where
 
 
 import Foreign
-import HNSView
-import HNSViewController
-import HNSButton
+import Cocoa.AppKit.HNSView
+import Cocoa.AppKit.HNSViewController
+import Cocoa.AppKit.HNSButton
 
 
 

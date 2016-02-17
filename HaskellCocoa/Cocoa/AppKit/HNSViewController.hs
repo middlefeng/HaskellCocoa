@@ -4,7 +4,7 @@
 
 
 
-module HNSViewController
+module Cocoa.AppKit.HNSViewController
 (
     HNSViewController
 ,   HNSViewControllerObj(..)
@@ -15,8 +15,8 @@ where
 
 
 import Foreign
-import HNSObject
-import HNSView
+import Cocoa.AppKit.HNSObject
+import Cocoa.AppKit.HNSView
 
 
 
