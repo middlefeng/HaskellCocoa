@@ -36,3 +36,20 @@ void hns_view_setFrame(HsPtr view, double x, double y, double width, double heig
 }
 
 
+
+struct HsRect
+{
+    double x, y, w, h;
+};
+
+HsPtr hns_view_frame(HsPtr view)
+{
+    static struct HsRect result;
+    NSView* pView = (__bridge NSView *)(view);
+    NSRect frame = pView.frame;
+    result.x = frame.origin.x;
+    result.y = frame.origin.y;
+    result.w = frame.size.width;
+    result.h = frame.size.height;
+    return &result;
+}

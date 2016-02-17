@@ -19,19 +19,26 @@ import HNSButton
 viewController_loadView :: Ptr HNSViewControllerObj -> IO ()
 
 viewController_loadView viewController =
-                            do
-                                view <- nsViewController_view viewController
-                                button <- nsButtonCreate
-                                nsButton_setTitle button "Test Button"
-                                nsView_setFrame button (HNSRect 10 10 100 20)
-                                nsView_addSubview view button
+                            let buttonFrame :: Double -> Double -> HNSRect -> HNSRect
+                                buttonFrame btnW btnH (HNSRect _ _ w h) =
+                                                let x' = (w - btnW) / 2.0
+                                                    y' = (h - btnH) / 2.0
+                                                in
+                                                    (HNSRect x' y' btnW btnH) in
+                                do
+                                    view <- nsViewController_view viewController
+                                    viewFrame <- nsView_frame view
+                                    button <- nsButtonCreate
+                                    nsButton_setTitle button "Test Button"
+                                    nsView_setFrame button (buttonFrame 100.0 30.0 viewFrame)
+                                    nsView_addSubview view button
 
 
 
 
 viewController_viewLoaded :: Ptr HNSViewControllerObj -> IO ()
 
-viewController_viewLoaded viewController = do return ()
+viewController_viewLoaded _ = do return ()
 
 
 
