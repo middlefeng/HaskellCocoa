@@ -12,7 +12,7 @@ where
 
 
 import Foreign
-import HNSObject
+import Cocoa.Runtime.HNSObject
 import HNSView
 
 

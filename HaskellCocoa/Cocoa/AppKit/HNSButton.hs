@@ -19,7 +19,7 @@ where
 
 import Foreign
 import Foreign.C.String
-import Cocoa.AppKit.HNSObject
+import Cocoa.Runtime.HNSObject
 import Cocoa.AppKit.HNSView
 import Cocoa.AppKit.HNSControl
 
