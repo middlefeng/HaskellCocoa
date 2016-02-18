@@ -25,11 +25,14 @@ foreign import ccall "wrapper" mkFreeFunPtr :: (Ptr HNSButtonObj -> Ptr HNSViewC
 
 viewController_testButtonAction :: Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()
 
-viewController_testButtonAction _ _ = do
+viewController_testButtonAction button _ = 
+                            let buttonLabel button' =
+                                    nsButton_setTitle button' "Tested" in
+                                do
                                     alert <- nsAlertCreate
                                     window <- nsApp_keyWindow
                                     nsAlert_setMessageText alert "Test Alert."
-                                    nsAlert_beginSheetModalForWindow alert window (\_ _ -> return ())
+                                    nsAlert_beginSheetModalForWindow alert window (\_ _ -> buttonLabel button)
 
 
 
