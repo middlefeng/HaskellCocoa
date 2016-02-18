@@ -39,6 +39,7 @@ void hns_alert_beginSheetModalForWindow(HsPtr alert, HsPtr window, HsFunPtr comp
     [pAlert beginSheetModalForWindow:pWindow completionHandler:^(NSModalResponse returnCode)
                  {
                      pHandler(alert, returnCode);
+                     hs_free_fun_ptr(completeHandler);
                  }];
 }
 
