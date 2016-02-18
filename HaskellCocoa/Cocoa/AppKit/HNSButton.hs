@@ -21,6 +21,7 @@ import Foreign
 import Foreign.C.String
 import Cocoa.AppKit.HNSObject
 import Cocoa.AppKit.HNSView
+import Cocoa.AppKit.HNSControl
 
 
 
@@ -46,7 +47,7 @@ data HNSBezelStyle =
 
 
 
-class (HNSView a) => HNSButton a where
+class (HNSControl a) => HNSButton a where
 
     nsButton_setTitle :: Ptr a -> String -> IO ()
 
@@ -83,6 +84,7 @@ data HNSButtonObj
 
 instance HNSObject HNSButtonObj where
 instance HNSView HNSButtonObj where
+instance HNSControl HNSButtonObj where
 instance HNSButton HNSButtonObj where
 
 

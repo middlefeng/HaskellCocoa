@@ -8,10 +8,23 @@ module ViewController where
 
 
 import Foreign
+
 import Cocoa.AppKit.HNSView
 import Cocoa.AppKit.HNSViewController
+import Cocoa.AppKit.HNSControl
 import Cocoa.AppKit.HNSButton
 
+
+
+foreign import ccall "wrapper" mkFreeFunPtr :: (Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()) ->
+                                                IO (FunPtr (Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()))
+
+
+viewController_testButtonAction :: Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()
+
+viewController_testButtonAction sender view = do
+                                    putStrLn "Test"
+                                    return ()
 
 
 
@@ -29,6 +42,10 @@ viewController_loadView viewController =
                                     view <- nsViewController_view viewController
                                     viewFrame <- nsView_frame view
                                     button <- nsButtonCreate
+
+                                    buttonAction <- mkFreeFunPtr viewController_testButtonAction
+                                    nsControl_setAction button buttonAction
+
                                     nsButton_setBezelStyle button HNSRounded
                                     nsButton_setTitle button "Test Button"
                                     nsView_setFrame button (buttonFrame 100.0 30.0 viewFrame)
@@ -46,6 +63,5 @@ viewController_viewLoaded _ = do return ()
 
 foreign export ccall viewController_loadView :: Ptr HNSViewControllerObj -> IO ()
 foreign export ccall viewController_viewLoaded :: Ptr HNSViewControllerObj -> IO ()
-
 
 
