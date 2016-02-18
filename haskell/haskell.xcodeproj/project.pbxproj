@@ -32,9 +32,6 @@
 		983F33261C6C025900BB4A75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F33251C6C025900BB4A75 /* ViewController.m */; };
 		983F33281C6C025900BB4A75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983F33271C6C025900BB4A75 /* Assets.xcassets */; };
 		983F332B1C6C025900BB4A75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983F33291C6C025900BB4A75 /* Main.storyboard */; };
-		983F333E1C6C0EF300BB4A75 /* HaskellExt.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 983F333D1C6C0EF300BB4A75 /* HaskellExt.o */; };
-		983F33401C6C11E900BB4A75 /* HaskellExt.c in Sources */ = {isa = PBXBuildFile; fileRef = 983F333F1C6C11E900BB4A75 /* HaskellExt.c */; };
-		983F33421C6C51C400BB4A75 /* HaskellExt_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F33411C6C51C400BB4A75 /* HaskellExt_UI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,10 +74,6 @@
 		983F33271C6C025900BB4A75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		983F332A1C6C025900BB4A75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		983F332C1C6C025900BB4A75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		983F333C1C6C0E8000BB4A75 /* HaskellExt_stub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HaskellExt_stub.h; path = ../HaskellExt_stub.h; sourceTree = "<group>"; };
-		983F333D1C6C0EF300BB4A75 /* HaskellExt.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HaskellExt.o; path = ../HaskellExt.o; sourceTree = "<group>"; };
-		983F333F1C6C11E900BB4A75 /* HaskellExt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = HaskellExt.c; path = haskell/HaskellExt.c; sourceTree = "<group>"; };
-		983F33411C6C51C400BB4A75 /* HaskellExt_UI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HaskellExt_UI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +84,6 @@
 				2CA92F581C744684001F9A89 /* libiconv.tbd in Frameworks */,
 				2C7E90E61C763A0300923016 /* HNSApp.o in Frameworks */,
 				2C338FBB1C6FE394003A138A /* ViewController.o in Frameworks */,
-				983F333E1C6C0EF300BB4A75 /* HaskellExt.o in Frameworks */,
 				2CA92F5D1C7446A4001F9A89 /* HNSButton.o in Frameworks */,
 				2CA92F701C75CA06001F9A89 /* HNSObject.o in Frameworks */,
 				2CA92F5F1C7446A4001F9A89 /* HNSView.o in Frameworks */,
@@ -170,7 +162,6 @@
 			children = (
 				2C338FB71C6FE224003A138A /* Haskell-Cocoa-App */,
 				2C0699611C6FDC0600850613 /* Haskell-Cocoa */,
-				983F333B1C6C0E7900BB4A75 /* haskell */,
 				983F331D1C6C025900BB4A75 /* src */,
 				983F331C1C6C025900BB4A75 /* Products */,
 				983F33361C6C0D7F00BB4A75 /* Frameworks */,
@@ -222,20 +213,9 @@
 				2CA92F5C1C7446A4001F9A89 /* HNSViewController.o */,
 				2C7E90E71C76530E00923016 /* HNSWindow.o */,
 				2CA92F571C744684001F9A89 /* libiconv.tbd */,
-				983F333D1C6C0EF300BB4A75 /* HaskellExt.o */,
 				2C338FBA1C6FE394003A138A /* ViewController.o */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		983F333B1C6C0E7900BB4A75 /* haskell */ = {
-			isa = PBXGroup;
-			children = (
-				983F333C1C6C0E8000BB4A75 /* HaskellExt_stub.h */,
-				983F333F1C6C11E900BB4A75 /* HaskellExt.c */,
-				983F33411C6C51C400BB4A75 /* HaskellExt_UI.m */,
-			);
-			name = haskell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,11 +288,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CA92F561C74443F001F9A89 /* HNSViewController.m in Sources */,
-				983F33421C6C51C400BB4A75 /* HaskellExt_UI.m in Sources */,
 				983F33261C6C025900BB4A75 /* ViewController.m in Sources */,
 				2CA92F651C75A9B3001F9A89 /* HNSControl.m in Sources */,
 				983F33231C6C025900BB4A75 /* main.m in Sources */,
-				983F33401C6C11E900BB4A75 /* HaskellExt.c in Sources */,
 				983F33201C6C025900BB4A75 /* AppDelegate.m in Sources */,
 				2CA92F531C74443F001F9A89 /* HNSColor.m in Sources */,
 				2CA92F551C74443F001F9A89 /* HNSView.m in Sources */,

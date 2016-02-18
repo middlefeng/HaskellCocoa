@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "HaskellExt_stub.h"
 #import "ViewController_stub.h"
 
 @implementation ViewController
@@ -32,10 +31,5 @@
     [super setRepresentedObject:representedObject];
 }
 
-
-- (IBAction)showAlert:(id)sender
-{
-    showAlertHaskell();
-}
 
 @end
