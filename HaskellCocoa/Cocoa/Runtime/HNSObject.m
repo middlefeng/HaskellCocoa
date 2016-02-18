@@ -27,10 +27,10 @@ void hns_retain(id obj)
     NSMutableArray* asValue = sHNSRoots[asKey];
     
     if (asValue) {
-        [asValue addObject:asKey];
+        [asValue addObject:obj];
     } else {
-        asValue = [[NSMutableArray alloc] initWithObjects:asKey, nil];
-        [sHNSRoots setObject:obj forKey:asKey];
+        asValue = [[NSMutableArray alloc] initWithObjects:obj, nil];
+        [sHNSRoots setObject:asValue forKey:asKey];
     }
 }
 
@@ -63,7 +63,7 @@ void ns_retain(HsPtr obj)
 void ns_release(HsPtr obj)
 {
     id pObj = (__bridge id)obj;
-    hns_retain(pObj);
+    hns_release(pObj);
 }
 
 
