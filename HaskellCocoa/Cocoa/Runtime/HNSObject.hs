@@ -6,6 +6,8 @@
 module Cocoa.Runtime.HNSObject
 (
     HNSObject
+,	nsRetain
+,	nsRelease
 )
 where
 

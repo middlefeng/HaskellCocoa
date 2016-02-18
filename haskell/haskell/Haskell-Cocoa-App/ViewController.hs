@@ -9,10 +9,13 @@ module ViewController where
 
 import Foreign
 
+import Cocoa.Runtime.HNSObject
 import Cocoa.AppKit.HNSView
 import Cocoa.AppKit.HNSViewController
 import Cocoa.AppKit.HNSControl
 import Cocoa.AppKit.HNSButton
+import Cocoa.AppKit.HNSApp
+import Cocoa.AppKit.HNSAlert 
 
 
 
@@ -22,9 +25,11 @@ foreign import ccall "wrapper" mkFreeFunPtr :: (Ptr HNSButtonObj -> Ptr HNSViewC
 
 viewController_testButtonAction :: Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()
 
-viewController_testButtonAction sender view = do
-                                    putStrLn "Test"
-                                    return ()
+viewController_testButtonAction _ _ = do
+                                    alert <- nsAlertCreate
+                                    window <- nsApp_keyWindow
+                                    nsAlert_setMessageText alert "Test Alert."
+                                    nsAlert_beginSheetModalForWindow alert window (\_ _ -> return ())
 
 
 
@@ -50,6 +55,8 @@ viewController_loadView viewController =
                                     nsButton_setTitle button "Test Button"
                                     nsView_setFrame button (buttonFrame 100.0 30.0 viewFrame)
                                     nsView_addSubview view button
+
+                                    nsRelease button
 
 
 
