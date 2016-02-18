@@ -8,9 +8,9 @@
 module Cocoa.AppKit.HNSApp
 (
     nsApp_keyWindow
-,	HNSModalResponse(..)
-,	nsModalResponseToFFI
-,	nsModalResponseFromFFI
+,   HNSModalResponse(..)
+,   nsModalResponseToFFI
+,   nsModalResponseFromFFI
 )
 where
 
@@ -29,7 +29,7 @@ foreign import ccall hns_app_keyWindow :: IO (Ptr a)
 data HNSModalResponse = Stop | Abort | Continue
 
 
-nsModalResponseToFFI :: HNSModalResponse -> Int8
+nsModalResponseToFFI :: HNSModalResponse -> Int64
 
 nsModalResponseToFFI Stop = -1000
 nsModalResponseToFFI Abort = -1001
@@ -37,11 +37,12 @@ nsModalResponseToFFI Continue = -1002
 
 
 
-nsModalResponseFromFFI :: Int8 -> HNSModalResponse
+nsModalResponseFromFFI :: Int64 -> HNSModalResponse
 
 nsModalResponseFromFFI (-1000) = Stop
 nsModalResponseFromFFI (-1001) = Abort
 nsModalResponseFromFFI (-1002) = Continue
+nsModalResponseFromFFI _ = Stop
 
 
 

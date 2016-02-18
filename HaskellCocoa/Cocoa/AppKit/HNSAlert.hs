@@ -23,13 +23,13 @@ import Cocoa.AppKit.HNSApp
 import Cocoa.AppKit.HNSWindow
 
 
-foreign import ccall "wrapper" mkFreeFunPtr :: (Ptr a -> Int8 -> IO ()) ->
-                                                IO (FunPtr (Ptr a -> Int8 -> IO ()))
+foreign import ccall "wrapper" mkFreeFunPtr :: (Ptr a -> Int64 -> IO ()) ->
+                                                IO (FunPtr (Ptr a -> Int64 -> IO ()))
 
 
 foreign import ccall hns_AlertCreate :: IO (Ptr a)
 foreign import ccall hns_alert_setMessageText :: Ptr a -> CString -> IO ()
-foreign import ccall hns_alert_beginSheetModalForWindow :: Ptr a -> Ptr w -> FunPtr (Ptr a -> Int8 -> IO ()) -> IO ()
+foreign import ccall hns_alert_beginSheetModalForWindow :: Ptr a -> Ptr w -> FunPtr (Ptr a -> Int64 -> IO ()) -> IO ()
 
 
 class (HNSObject a) => HNSAlert a where
@@ -45,7 +45,7 @@ class (HNSObject a) => HNSAlert a where
                 completeHandler' alert' responseCode =
                                                     completeHandler alert' (nsModalResponseFromFFI responseCode)
                 
-                hns_alert_beginSheetModalForWindow' :: HNSWindow w => Ptr a -> Ptr w -> FunPtr (Ptr a -> Int8 -> IO ()) -> IO ()
+                hns_alert_beginSheetModalForWindow' :: HNSWindow w => Ptr a -> Ptr w -> FunPtr (Ptr a -> Int64 -> IO ()) -> IO ()
                 hns_alert_beginSheetModalForWindow' = hns_alert_beginSheetModalForWindow
                 
                 in do
