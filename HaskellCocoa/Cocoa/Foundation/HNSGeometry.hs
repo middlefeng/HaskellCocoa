@@ -7,12 +7,28 @@
 module Cocoa.Foundation.HNSGeometry
 (
     HNSRect(..)
+,   HNSSize(..)
 )
 where
 
 
 import Foreign
 
+
+
+data HNSSize = HNSSize Double Double
+
+instance Storable HNSSize where
+    alignment _ = 8
+    sizeOf _    = 16
+    peek ptr    = HNSSize
+        <$> peekByteOff ptr 0
+        <*> peekByteOff ptr 8
+    poke ptr (HNSSize w h) = do
+        pokeByteOff ptr 0 w
+        pokeByteOff ptr 8 h
+
+        
 
 
 data HNSRect = HNSRect Double Double Double Double
