@@ -13,8 +13,6 @@
 
 @interface ViewController()
 
-@property (nonatomic, weak) NSButton* userButton;
-
 @end
 
 
@@ -53,19 +51,6 @@
 @end
 
 
-void viewController_setUserButton(HsPtr viewController, HsPtr button)
-{
-    ViewController* pViewController = (__bridge ViewController*)viewController;
-    NSButton* pButton = (__bridge NSButton*)button;
-    pViewController.userButton = pButton;
-}
-
-
-HsPtr viewController_userButton(HsPtr viewController)
-{
-    ViewController* pViewController = (__bridge ViewController*)viewController;
-    return (__bridge HsPtr)pViewController.userButton;
-}
 
 
 

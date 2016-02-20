@@ -19,22 +19,12 @@ import Cocoa.AppKit.HNSButton
 import Cocoa.AppKit.HNSApp
 import Cocoa.AppKit.HNSAlert 
 
+import View
+
 
 
 foreign import ccall "wrapper" mkFreeFunPtr :: (Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()) ->
                                                 IO (FunPtr (Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()))
-
-
-
-buttonFrame :: Double -> Double ->      -- button size
-               HNSRect ->               -- view frame
-               HNSRect
-
-buttonFrame btnW btnH (HNSRect _ _ w _) =
-                let x' = (w - btnW - 10)
-                    y' = 10
-                in
-                    (HNSRect x' y' btnW btnH)
 
 
 
@@ -69,7 +59,7 @@ viewController_loadView viewController =
                                     nsView_setFrame button (buttonFrame 100.0 30.0 viewFrame)
                                     nsView_addSubview view button
 
-                                    viewController_setUserButton viewController button
+                                    view_setUserButton view button
                                     nsRelease button
 
 
@@ -79,7 +69,8 @@ viewController_viewWillTransitionToSize :: Ptr HNSViewControllerObj -> Double ->
 viewController_viewWillTransitionToSize viewController h w =
                             let viewFrame = HNSRect 0 0 h w in
                                 do
-                                    button <- viewController_userButton viewController
+                                    view <- nsViewController_view viewController
+                                    button <- view_userButton view
                                     nsView_setFrame button viewFrame
 
 
@@ -93,9 +84,6 @@ viewController_viewLoaded _ = do return ()
 
 
 
-
-foreign import ccall viewController_setUserButton :: Ptr HNSViewControllerObj -> Ptr HNSButtonObj -> IO ()
-foreign import ccall viewController_userButton :: Ptr HNSViewControllerObj -> IO (Ptr HNSButtonObj)
 
 foreign export ccall viewController_loadView :: Ptr HNSViewControllerObj -> IO ()
 foreign export ccall viewController_viewLoaded :: Ptr HNSViewControllerObj -> IO ()

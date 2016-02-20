@@ -30,7 +30,6 @@ void hns_view_removeFromSuperview(HsPtr view)
 void hns_view_setFrame(HsPtr view, double x, double y, double width, double height)
 {
     NSView* pView = (__bridge NSView *)(view);
-    [pView removeFromSuperview];
     NSRect frame = NSMakeRect(x, y, width, height);
     [pView setFrame:frame];
 }
