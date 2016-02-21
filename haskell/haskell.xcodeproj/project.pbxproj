@@ -15,6 +15,9 @@
 		2C7E90E81C76530E00923016 /* HNSWindow.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E90E71C76530E00923016 /* HNSWindow.o */; };
 		2C7E90EE1C7921D400923016 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E90ED1C7921D400923016 /* View.m */; };
 		2C7E90F01C7926DE00923016 /* View.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E90EF1C7926DE00923016 /* View.o */; };
+		2C7E90F41C7990D200923016 /* HNSBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E90F31C7990D200923016 /* HNSBezierPath.m */; };
+		2C7E90F61C79949500923016 /* HNSBezierPath.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E90F51C79949500923016 /* HNSBezierPath.o */; };
+		2C7E90F81C79972700923016 /* HNSColor.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E90F71C79972700923016 /* HNSColor.o */; };
 		2CA92F521C74443F001F9A89 /* HNSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA92F491C74443F001F9A89 /* HNSButton.m */; };
 		2CA92F531C74443F001F9A89 /* HNSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA92F4B1C74443F001F9A89 /* HNSColor.m */; };
 		2CA92F551C74443F001F9A89 /* HNSView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CA92F4F1C74443F001F9A89 /* HNSView.m */; };
@@ -50,6 +53,10 @@
 		2C7E90ED1C7921D400923016 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
 		2C7E90EF1C7926DE00923016 /* View.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = View.o; path = "haskell/Haskell-Cocoa-App/View.o"; sourceTree = "<group>"; };
 		2C7E90F11C79298500923016 /* View_stub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = View_stub.h; sourceTree = "<group>"; };
+		2C7E90F21C7990D200923016 /* HNSBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSBezierPath.h; sourceTree = "<group>"; };
+		2C7E90F31C7990D200923016 /* HNSBezierPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSBezierPath.m; sourceTree = "<group>"; };
+		2C7E90F51C79949500923016 /* HNSBezierPath.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSBezierPath.o; path = ../HaskellCocoa/Cocoa/AppKit/HNSBezierPath.o; sourceTree = "<group>"; };
+		2C7E90F71C79972700923016 /* HNSColor.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSColor.o; path = ../HaskellCocoa/Cocoa/AppKit/HNSColor.o; sourceTree = "<group>"; };
 		2CA92F481C74443F001F9A89 /* HNSButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSButton.h; sourceTree = "<group>"; };
 		2CA92F491C74443F001F9A89 /* HNSButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSButton.m; sourceTree = "<group>"; };
 		2CA92F4A1C74443F001F9A89 /* HNSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSColor.h; sourceTree = "<group>"; };
@@ -93,10 +100,12 @@
 				2CA92F5D1C7446A4001F9A89 /* HNSButton.o in Frameworks */,
 				2CA92F701C75CA06001F9A89 /* HNSObject.o in Frameworks */,
 				2CA92F5F1C7446A4001F9A89 /* HNSView.o in Frameworks */,
+				2C7E90F61C79949500923016 /* HNSBezierPath.o in Frameworks */,
 				2C7E90F01C7926DE00923016 /* View.o in Frameworks */,
 				2CA92F601C7446A4001F9A89 /* HNSViewController.o in Frameworks */,
 				2CA92F621C7447AD001F9A89 /* HNSGeometry.o in Frameworks */,
 				2C7E90E81C76530E00923016 /* HNSWindow.o in Frameworks */,
+				2C7E90F81C79972700923016 /* HNSColor.o in Frameworks */,
 				2C7E90DE1C75CE5A00923016 /* HNSAlert.o in Frameworks */,
 				2CA92F671C75C152001F9A89 /* HNSControl.o in Frameworks */,
 			);
@@ -152,6 +161,8 @@
 				2CA92F511C74443F001F9A89 /* HNSViewController.m */,
 				2C7E90E21C7638DF00923016 /* HNSWindow.h */,
 				2C7E90E31C7638DF00923016 /* HNSWindow.m */,
+				2C7E90F21C7990D200923016 /* HNSBezierPath.h */,
+				2C7E90F31C7990D200923016 /* HNSBezierPath.m */,
 			);
 			path = AppKit;
 			sourceTree = "<group>";
@@ -222,6 +233,8 @@
 				2CA92F661C75C152001F9A89 /* HNSControl.o */,
 				2CA92F5C1C7446A4001F9A89 /* HNSViewController.o */,
 				2C7E90E71C76530E00923016 /* HNSWindow.o */,
+				2C7E90F51C79949500923016 /* HNSBezierPath.o */,
+				2C7E90F71C79972700923016 /* HNSColor.o */,
 				2CA92F571C744684001F9A89 /* libiconv.tbd */,
 				2C338FBA1C6FE394003A138A /* ViewController.o */,
 				2C7E90EF1C7926DE00923016 /* View.o */,
@@ -299,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C7E90EE1C7921D400923016 /* View.m in Sources */,
+				2C7E90F41C7990D200923016 /* HNSBezierPath.m in Sources */,
 				2CA92F561C74443F001F9A89 /* HNSViewController.m in Sources */,
 				983F33261C6C025900BB4A75 /* ViewController.m in Sources */,
 				2CA92F651C75A9B3001F9A89 /* HNSControl.m in Sources */,
