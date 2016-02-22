@@ -16,7 +16,6 @@ where
 
 
 import Foreign
-import Foreign.Ptr
 import Cocoa.AppKit.HNSWindow
 
 
