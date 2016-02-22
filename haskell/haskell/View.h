@@ -1,17 +1,13 @@
 //
-//  ViewController.h
+//  View.h
 //  haskell
 //
-//  Created by dfeng on 2/10/16.
+//  Created by middleware on 2/20/16.
 //  Copyright © 2016 dfeng. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 
-
-
-@interface ViewController : NSViewController
-
+@interface View : NSView
 
 @end
-

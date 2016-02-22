@@ -13,7 +13,6 @@ module Cocoa.AppKit.HNSWindow
 where
 
 
-import Foreign
 import Cocoa.Runtime.HNSObject
 
 

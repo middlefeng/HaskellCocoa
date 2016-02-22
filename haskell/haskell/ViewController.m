@@ -9,6 +9,15 @@
 #import "ViewController.h"
 #import "ViewController_stub.h"
 
+
+
+@interface ViewController()
+
+@end
+
+
+
+
 @implementation ViewController
 
 
@@ -26,6 +35,13 @@
 }
 
 
+- (void)viewWillTransitionToSize:(NSSize)newSize
+{
+    viewController_viewWillTransitionToSize((__bridge HsPtr)(self),
+                                            newSize.width, newSize.height);
+}
+
+
 - (void)setRepresentedObject:(id)representedObject
 {
     [super setRepresentedObject:representedObject];
@@ -33,3 +49,9 @@
 
 
 @end
+
+
+
+
+
+
