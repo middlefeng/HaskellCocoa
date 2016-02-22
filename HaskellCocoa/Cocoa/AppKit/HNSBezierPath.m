@@ -27,3 +27,12 @@ void hns_bezierPath_stroke(HsPtr path)
     NSBezierPath* pPath = (__bridge NSBezierPath*)path;
     [pPath stroke];
 }
+
+
+
+void hns_bezierPath_setLineWidth(HsPtr path, double width)
+{
+    NSBezierPath* pPath = (__bridge NSBezierPath*)path;
+    [pPath setLineWidth:width];
+}
+

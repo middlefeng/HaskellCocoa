@@ -10,6 +10,7 @@ module Cocoa.AppKit.HNSBezierPath
     HNSBezierPathObj
 ,   nsBezierPathWithRoundedRect
 ,   nsBezierPath_strok
+,   nsBezierPath_setLineWidth
 )
 where
 
@@ -37,9 +38,15 @@ nsBezierPath_strok = hns_bezierPath_stroke
 
 
 
+nsBezierPath_setLineWidth :: Ptr HNSBezierPathObj -> Double -> IO ()
+nsBezierPath_setLineWidth = hns_bezierPath_setLineWidth
+
+
+
 
 foreign import ccall hns_BezierPathWithRoundedRect :: Double -> Double -> Double -> Double ->
                                                       Double -> Double ->
                                                       IO (Ptr HNSBezierPathObj)
 
 foreign import ccall hns_bezierPath_stroke :: Ptr HNSBezierPathObj -> IO ()
+foreign import ccall hns_bezierPath_setLineWidth :: Ptr HNSBezierPathObj -> Double -> IO ()

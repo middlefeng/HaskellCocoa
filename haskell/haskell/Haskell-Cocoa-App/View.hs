@@ -46,6 +46,7 @@ view_drawRect view _ _ _ _ =
                                 color <- nsColorCreate 0.2 0.2 0.2 1.0
                                 nsColor_set color
                                 path <- nsBezierPathWithRoundedRect (inSet viewFrame 20) 5 5
+                                nsBezierPath_setLineWidth path 3.0
                                 nsBezierPath_strok path
 
 
