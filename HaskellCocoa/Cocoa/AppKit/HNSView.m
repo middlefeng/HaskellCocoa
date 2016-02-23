@@ -35,6 +35,19 @@ void hns_view_setFrame(HsPtr view, double x, double y, double width, double heig
 }
 
 
+void hns_view_setNeedsDisplay(HsPtr view, HsBool need)
+{
+    NSView* pView = (__bridge NSView *)(view);
+    [pView setNeedsDisplay:need];
+}
+
+
+HsBool hns_view_inLiveResize(HsPtr view)
+{
+    NSView* pView = (__bridge NSView *)(view);
+    return pView.inLiveResize;
+}
+
 
 struct HsRect
 {
