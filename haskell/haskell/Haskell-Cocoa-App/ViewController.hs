@@ -50,7 +50,7 @@ viewController_loadView :: Ptr HNSViewControllerObj -> IO ()
 
 viewController_loadView viewController =
                                 do
-                                    modelInit (AppModel (MousePos 0 0))
+                                    appModelInit (AppModel (MousePos 0 0))
 
                                     view <- nsViewController_view viewController
                                     viewFrame <- nsView_frame view

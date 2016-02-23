@@ -12,7 +12,7 @@
 
 @interface HModel()
 
-@property (nonatomic, assign) HsStablePtr model;
+@property (nonatomic, strong) NSMutableDictionary* hsModels;
 
 @end
 
@@ -28,24 +28,43 @@ HModel* sModel;
 
 
 
-void h_model_init(HsStablePtr model)
+void h_model_init(HsStablePtr model, const char* name)
 {
-    sModel = [[HModel alloc] init];
-    sModel.model = model;
+    if (!sModel)
+        sModel = [[HModel alloc] init];
+    if (!sModel.hsModels)
+        sModel.hsModels = [[NSMutableDictionary alloc] init];
+    
+    NSString* nameStr = [NSString stringWithUTF8String:name];
+    NSNumber* oldModel = sModel.hsModels[nameStr];
+    if (oldModel)
+    {
+        HsStablePtr pModel = (HsStablePtr)[oldModel longLongValue];
+        hs_free_stable_ptr(pModel);
+    }
+    
+    NSNumber* newModel = [NSNumber numberWithLongLong:(long long)model];
+    [sModel.hsModels setObject:newModel forKey:nameStr];
 }
 
 
 typedef HsStablePtr (*updateFunc_t)(HsStablePtr);
 
 
-void h_model_update(HsFunPtr func)
+void h_model_update(HsFunPtr func, const char* name)
 {
     updateFunc_t updateFunc = (updateFunc_t)func;
     
-    HsStablePtr newModel = updateFunc(sModel.model);
+    NSString* nameStr = [NSString stringWithUTF8String:name];
+    NSNumber* asModel = sModel.hsModels[nameStr];
+    HsStablePtr model = (HsStablePtr)asModel.longLongValue;
+    
+    HsStablePtr newModel = updateFunc(model);
     hs_free_fun_ptr(func);
-    hs_free_stable_ptr(sModel.model);
-    sModel.model = newModel;
+    hs_free_stable_ptr(model);
+    
+    asModel = [NSNumber numberWithLongLong:(long long)newModel];
+    [sModel.hsModels setObject:asModel forKey:nameStr];
 }
 
 
@@ -53,10 +72,14 @@ typedef void (*queryFunc_t)(HsStablePtr);
 
 
 
-void h_model_query(HsFunPtr func)
+void h_model_query(HsFunPtr func, const char* name)
 {
+    NSString* nameStr = [NSString stringWithUTF8String:name];
+    NSNumber* asModel = sModel.hsModels[nameStr];
+    HsStablePtr model = (HsStablePtr)asModel.longLongValue;
+    
     queryFunc_t queryFunc = (queryFunc_t)func;
-    queryFunc(sModel.model);
+    queryFunc(model);
     hs_free_fun_ptr(func);
 }
 

@@ -17,7 +17,6 @@ import Cocoa.AppKit.HNSColor
 import Cocoa.AppKit.HNSBezierPath
 
 import Model
-import AppFoundation.HModel
 
 
 
@@ -63,7 +62,7 @@ view_drawRect view _ _ _ _ =
                                         appModelUpdate id
                                             
 
-                                modelQuery showModel where
+                                appModelQuery showModel where
                                     showModel (AppModel (MousePos x' y')) =
                                         do
                                             path <- nsBezierPathWithRoundedRect (centerFor x' y' 10) 3 3

@@ -10,6 +10,7 @@ module Model
 ,   MousePos(..)
 ,   appModelInit
 ,   appModelUpdate
+,   appModelQuery
 )
 where
 
@@ -25,11 +26,22 @@ data AppModel = AppModel MousePos
 
 
 
+appModelName :: String
+appModelName = "default"
+
+
+
+
 appModelInit :: AppModel -> IO ()
-appModelInit = modelInit
+appModelInit m = modelInit m appModelName
 
 
 
 appModelUpdate :: (AppModel -> AppModel) -> IO ()
-appModelUpdate = modelUpdate
+appModelUpdate m = modelUpdate m appModelName
+
+
+
+appModelQuery :: (AppModel -> IO ()) -> IO ()
+appModelQuery m = modelQuery m appModelName
 
