@@ -8,6 +8,7 @@
 module AppFoundation.HModel
 (
     modelInit
+,   modelDestroy
 ,   modelUpdate
 ,   modelQuery
 )
@@ -28,6 +29,7 @@ foreign import ccall "wrapper" mkFreeFunQueryPtr :: (StablePtr a -> IO ()) ->
 foreign import ccall h_model_init :: StablePtr a -> CString -> IO ()
 foreign import ccall h_model_update :: FunPtr (StablePtr a -> IO (StablePtr a)) -> CString -> IO ()
 foreign import ccall h_model_query :: FunPtr (StablePtr a -> IO ()) -> CString -> IO ()
+foreign import ccall h_model_destroy :: CString -> IO ()
 
 
 modelInit :: a -> String -> IO ()
@@ -35,6 +37,11 @@ modelInit a name =
     do
         p <- newStablePtr a
         withCString name (\s -> h_model_init p s)
+
+
+
+modelDestroy :: String -> IO ()
+modelDestroy name = withCString name (\s -> h_model_destroy s)
 
 
 

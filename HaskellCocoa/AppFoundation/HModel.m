@@ -48,6 +48,18 @@ void h_model_init(HsStablePtr model, const char* name)
 }
 
 
+void h_model_destroy(const char* name)
+{
+    NSString* nameStr = [NSString stringWithUTF8String:name];
+    NSNumber* asModel = sModel.hsModels[nameStr];
+    HsStablePtr model = (HsStablePtr)asModel.longLongValue;
+    
+    hs_free_stable_ptr(model);
+    [sModel.hsModels removeObjectForKey:nameStr];
+}
+
+
+
 typedef HsStablePtr (*updateFunc_t)(HsStablePtr);
 
 

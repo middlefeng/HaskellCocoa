@@ -19,8 +19,6 @@ import Cocoa.AppKit.HNSButton
 import Cocoa.AppKit.HNSApp
 import Cocoa.AppKit.HNSAlert 
 
-import AppFoundation.HModel
-
 import View
 import Model
 
