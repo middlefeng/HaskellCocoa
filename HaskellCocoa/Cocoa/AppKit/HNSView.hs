@@ -14,6 +14,7 @@ module Cocoa.AppKit.HNSView
 ,   nsView_setFrame
 ,   nsView_frame
 ,   nsView_setNeedsDisplay
+,   nsView_inLiveResize
 )
 where
 
@@ -44,6 +45,9 @@ class (HNSObject a) => HNSView a where
     nsView_setNeedsDisplay :: Ptr a -> Bool -> IO ()
     nsView_setNeedsDisplay = hns_view_setNeedsDisplay
 
+    nsView_inLiveResize :: Ptr a -> IO Bool
+    nsView_inLiveResize = hns_view_inLiveResize
+
 
 
 
@@ -60,7 +64,11 @@ instance HNSView HNSViewObj where
 
 foreign import ccall hns_view_addSubview :: Ptr a -> Ptr b -> IO ()
 foreign import ccall hns_view_removeFromSuperview :: Ptr a -> IO ()
+
 foreign import ccall hns_view_setFrame :: Ptr a -> Double -> Double -> Double -> Double -> IO ()
-foreign import ccall hns_view_setNeedsDisplay :: Ptr a -> Bool -> IO ()
 foreign import ccall hns_view_frame :: Ptr a -> IO (Ptr HNSRect)
+
+foreign import ccall hns_view_setNeedsDisplay :: Ptr a -> Bool -> IO ()
+
+foreign import ccall hns_view_inLiveResize :: Ptr a -> IO Bool
 

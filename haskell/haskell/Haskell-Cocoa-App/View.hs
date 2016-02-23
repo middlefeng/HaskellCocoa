@@ -38,7 +38,9 @@ view_drawRect :: Ptr HNSViewObj -> Double -> Double -> Double -> Double -> IO ()
 
 view_drawRect view _ _ _ _ = 
                         let inSet :: HNSRect -> Double -> HNSRect
-                            inSet (HNSRect x' y' w' h') i = (HNSRect (x' + i) (y' + i) (w' - i * 2.0) (h' - i * 2.0)) in
+                            inSet (HNSRect x' y' w' h') i = (HNSRect (x' + i) (y' + i) (w' - i * 2.0) (h' - i * 2.0))
+
+                            center (HNSRect x' y' w' h') = (x' + w' / 2.0, y' + h' / 2.0) in
 
                             do
                                 viewFrame <- nsView_frame view
@@ -50,6 +52,16 @@ view_drawRect view _ _ _ _ =
                                 path <- nsBezierPathWithRoundedRect (inSet viewFrame 20) 5 5
                                 nsBezierPath_setLineWidth path 3.0
                                 nsBezierPath_strok path
+
+                                liveResize <- nsView_inLiveResize view
+                                if liveResize
+                                    then
+                                        do
+                                            let f _ = (AppModel (MousePos cx cy)) where (cx, cy) = center viewFrame
+                                            appModelUpdate f
+                                    else
+                                        appModelUpdate id
+                                            
 
                                 modelQuery showModel where
                                     showModel (AppModel (MousePos x' y')) =
