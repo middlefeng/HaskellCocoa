@@ -13,6 +13,7 @@ module Cocoa.AppKit.HNSView
 ,   nsView_removeFromSuperview
 ,   nsView_setFrame
 ,   nsView_frame
+,   nsView_setNeedsDisplay
 )
 where
 
@@ -40,6 +41,9 @@ class (HNSObject a) => HNSView a where
                             (HNSRect x y w h) <- peek rectP
                             return (HNSRect x y w h)
 
+    nsView_setNeedsDisplay :: Ptr a -> Bool -> IO ()
+    nsView_setNeedsDisplay = hns_view_setNeedsDisplay
+
 
 
 
@@ -57,5 +61,6 @@ instance HNSView HNSViewObj where
 foreign import ccall hns_view_addSubview :: Ptr a -> Ptr b -> IO ()
 foreign import ccall hns_view_removeFromSuperview :: Ptr a -> IO ()
 foreign import ccall hns_view_setFrame :: Ptr a -> Double -> Double -> Double -> Double -> IO ()
+foreign import ccall hns_view_setNeedsDisplay :: Ptr a -> Bool -> IO ()
 foreign import ccall hns_view_frame :: Ptr a -> IO (Ptr HNSRect)
 

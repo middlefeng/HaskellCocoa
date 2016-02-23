@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C2343911C7C2C49005EEA7B /* HModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C2343901C7C2C49005EEA7B /* HModel.m */; };
 		2C2343931C7C32B9005EEA7B /* HModel.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2343921C7C32B9005EEA7B /* HModel.o */; };
+		2C2343951C7C3A42005EEA7B /* Model.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2343941C7C3A42005EEA7B /* Model.o */; };
 		2C338FBB1C6FE394003A138A /* ViewController.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C338FBA1C6FE394003A138A /* ViewController.o */; };
 		2C7E90DE1C75CE5A00923016 /* HNSAlert.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C7E90DD1C75CE5A00923016 /* HNSAlert.o */; };
 		2C7E90E11C76372A00923016 /* HNSApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7E90E01C76372A00923016 /* HNSApp.m */; };
@@ -45,6 +46,7 @@
 		2C23438F1C7C2C49005EEA7B /* HModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HModel.h; sourceTree = "<group>"; };
 		2C2343901C7C2C49005EEA7B /* HModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HModel.m; sourceTree = "<group>"; };
 		2C2343921C7C32B9005EEA7B /* HModel.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HModel.o; path = ../HaskellCocoa/AppFoundation/HModel.o; sourceTree = "<group>"; };
+		2C2343941C7C3A42005EEA7B /* Model.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = Model.o; path = "haskell/Haskell-Cocoa-App/Model.o"; sourceTree = "<group>"; };
 		2C338FB91C6FE341003A138A /* ViewController_stub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_stub.h; sourceTree = "<group>"; };
 		2C338FBA1C6FE394003A138A /* ViewController.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = ViewController.o; path = "haskell/Haskell-Cocoa-App/ViewController.o"; sourceTree = "<group>"; };
 		2C7E90DD1C75CE5A00923016 /* HNSAlert.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSAlert.o; path = ../HaskellCocoa/Cocoa/AppKit/HNSAlert.o; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				2C338FBB1C6FE394003A138A /* ViewController.o in Frameworks */,
 				2CA92F5D1C7446A4001F9A89 /* HNSButton.o in Frameworks */,
 				2CA92F701C75CA06001F9A89 /* HNSObject.o in Frameworks */,
+				2C2343951C7C3A42005EEA7B /* Model.o in Frameworks */,
 				2C2343931C7C32B9005EEA7B /* HModel.o in Frameworks */,
 				2CA92F5F1C7446A4001F9A89 /* HNSView.o in Frameworks */,
 				2C7E90F61C79949500923016 /* HNSBezierPath.o in Frameworks */,
@@ -253,6 +256,7 @@
 				2C7E90F51C79949500923016 /* HNSBezierPath.o */,
 				2C7E90F71C79972700923016 /* HNSColor.o */,
 				2CA92F571C744684001F9A89 /* libiconv.tbd */,
+				2C2343941C7C3A42005EEA7B /* Model.o */,
 				2C338FBA1C6FE394003A138A /* ViewController.o */,
 				2C7E90EF1C7926DE00923016 /* View.o */,
 			);
