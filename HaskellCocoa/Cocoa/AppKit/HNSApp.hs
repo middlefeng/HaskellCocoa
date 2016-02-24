@@ -8,6 +8,7 @@
 module Cocoa.AppKit.HNSApp
 (
     nsApp_keyWindow
+,   nsApp_delegate
 ,   HNSModalResponse(..)
 ,   nsModalResponseToFFI
 ,   nsModalResponseFromFFI
