@@ -17,20 +17,15 @@ where
 
 
 import Foreign
-import Cocoa.Runtime.HNSObject
 
 
 
 
 class (HNSObject a) => HNSMenuItem a where
 
-    nsMenuItem_setAction :: (HNSObject b) => Ptr a ->                            -- sender                               
-                                             FunPtr (
-                                                        Ptr a ->    -- sender
-                                                        Ptr b ->    -- target
-                                                        IO ()
-                                                    ) ->                        -- action
-                                             IO ()
+    nsMenuItem_setAction :: Ptr a ->                            -- sender                               
+                            FunPtr (Ptr a -> IO ()) ->          -- action
+                            IO ()
 
     nsMenuItem_setAction = hns_menuItem_setAction
 
@@ -51,7 +46,7 @@ instance HNSMenuItem HNSMenuItemObj where
 
 
 
-foreign import ccall hns_menuItem_setAction :: Ptr a -> FunPtr (Ptr a -> Ptr b -> IO ()) -> IO ()
+foreign import ccall hns_menuItem_setAction :: Ptr a -> FunPtr (Ptr a -> IO ()) -> IO ()
 foreign import ccall hns_menuItem_removeAction :: Ptr a -> IO ()
 
 
