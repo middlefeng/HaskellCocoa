@@ -10,7 +10,6 @@ module View where
 import Foreign
 
 import Cocoa.Foundation.HNSGeometry
-import Cocoa.Runtime.HNSObject
 
 import Cocoa.AppKit.HNSApp
 import Cocoa.AppKit.HNSView
@@ -61,10 +60,12 @@ menuRedo _ view =
             nsView_setNeedsDisplay view True
 
 
+canUndo :: AppModel -> Bool
 canUndo (AppModel _ Nothing _) = False
 canUndo _ = True
 
 
+canRedo :: AppModel -> Bool
 canRedo (AppModel _ _ Nothing) = False
 canRedo _ = True
 
@@ -107,7 +108,8 @@ view_drawRect view _ _ _ _ =
                         let inSet :: HNSRect -> Double -> HNSRect
                             inSet (HNSRect x' y' w' h') i = (HNSRect (x' + i) (y' + i) (w' - i * 2.0) (h' - i * 2.0))
 
-                            center (HNSRect x' y' w' h') = (x' + w' / 2.0, y' + h' / 2.0) in
+                            -- center (HNSRect x' y' w' h') = (x' + w' / 2.0, y' + h' / 2.0
+                        in
 
                             do
                                 viewFrame <- nsView_frame view
@@ -132,7 +134,7 @@ view_drawRect view _ _ _ _ =
                                 -}
                                 
                                 appModelQuery showModel where
-                                    showModel m@(AppModel (MousePos x' y') prev next) =
+                                    showModel m@(AppModel (MousePos x' y') _ _) =
                                             do
                                                 path <- nsBezierPathWithRoundedRect (centerFor x' y' 10) 3 3
                                                 nsBezierPath_setLineWidth path 2.0
