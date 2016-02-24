@@ -21,6 +21,7 @@ import Cocoa.AppKit.HNSWindow
 
 
 foreign import ccall hns_app_keyWindow :: IO (Ptr a)
+foreign import ccall hns_app_delegate :: IO (Ptr a)
 
 
 
@@ -48,3 +49,10 @@ nsModalResponseFromFFI _ = Stop
 
 nsApp_keyWindow :: IO (Ptr HNSWindowObj)
 nsApp_keyWindow = hns_app_keyWindow
+
+
+
+nsApp_delegate :: IO (Ptr a)
+nsApp_delegate = hns_app_delegate
+
+

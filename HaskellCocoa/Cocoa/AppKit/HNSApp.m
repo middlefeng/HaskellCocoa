@@ -19,3 +19,11 @@ HsPtr hns_app_keyWindow(void)
 
 
 
+HsPtr hns_app_delegate(void)
+{
+    id<NSApplicationDelegate> delegate = [NSApp delegate];
+    return (__bridge HsPtr)delegate;
+}
+
+
+

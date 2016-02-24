@@ -8,18 +8,54 @@
 
 #import "AppDelegate.h"
 
+#import "HsFFI.h"
+
+
+
+
 @interface AppDelegate ()
+{
+    IBOutlet NSMenuItem* _undo;
+    IBOutlet NSMenuItem* _redo;
+}
+
 
 @end
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
 }
 
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
+- (void)applicationWillTerminate:(NSNotification *)aNotification
+{
+}
+
+- (NSMenuItem*)undo
+{
+    return _undo;
+}
+
+- (NSMenuItem*)redo
+{
+    return _redo;
 }
 
 @end
+
+
+
+HsPtr AppDelegate_undo(HsPtr delegate)
+{
+    AppDelegate* pDelegate = (__bridge AppDelegate*)delegate;
+    return (__bridge HsPtr)[pDelegate undo];
+}
+
+
+HsPtr AppDelegate_redo(HsPtr delegate)
+{
+    AppDelegate* pDelegate = (__bridge AppDelegate*)delegate;
+    return (__bridge HsPtr)[pDelegate redo];
+}
+
