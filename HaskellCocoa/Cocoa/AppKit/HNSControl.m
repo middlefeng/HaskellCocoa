@@ -66,6 +66,10 @@ void hns_control_removeAction(HsPtr control)
 {
     NSControl* pControl = (__bridge NSControl*)control;
     id oldTarget = pControl.target;
+    
+    pControl.target = nil;
+    pControl.action = nil;
+    
     if (oldTarget)
         hns_release(oldTarget);
 }

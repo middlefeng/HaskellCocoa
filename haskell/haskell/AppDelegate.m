@@ -46,14 +46,14 @@
 
 
 
-HsPtr AppDelegate_undo(HsPtr delegate)
+HsPtr appDelegate_undo(HsPtr delegate)
 {
     AppDelegate* pDelegate = (__bridge AppDelegate*)delegate;
     return (__bridge HsPtr)[pDelegate undo];
 }
 
 
-HsPtr AppDelegate_redo(HsPtr delegate)
+HsPtr appDelegate_redo(HsPtr delegate)
 {
     AppDelegate* pDelegate = (__bridge AppDelegate*)delegate;
     return (__bridge HsPtr)[pDelegate redo];

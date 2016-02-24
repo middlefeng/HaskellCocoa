@@ -40,6 +40,7 @@
 		983F33261C6C025900BB4A75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F33251C6C025900BB4A75 /* ViewController.m */; };
 		983F33281C6C025900BB4A75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983F33271C6C025900BB4A75 /* Assets.xcassets */; };
 		983F332B1C6C025900BB4A75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983F33291C6C025900BB4A75 /* Main.storyboard */; };
+		985686E31C7D4A43004549C7 /* HNSMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 985686E21C7D4A43004549C7 /* HNSMenuItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,8 @@
 		983F33271C6C025900BB4A75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		983F332A1C6C025900BB4A75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		983F332C1C6C025900BB4A75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		985686E11C7D4A43004549C7 /* HNSMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSMenuItem.h; sourceTree = "<group>"; };
+		985686E21C7D4A43004549C7 /* HNSMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSMenuItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,8 @@
 				2CA92F511C74443F001F9A89 /* HNSViewController.m */,
 				2C7E90E21C7638DF00923016 /* HNSWindow.h */,
 				2C7E90E31C7638DF00923016 /* HNSWindow.m */,
+				985686E11C7D4A43004549C7 /* HNSMenuItem.h */,
+				985686E21C7D4A43004549C7 /* HNSMenuItem.m */,
 				2C7E90F21C7990D200923016 /* HNSBezierPath.h */,
 				2C7E90F31C7990D200923016 /* HNSBezierPath.m */,
 			);
@@ -337,6 +342,7 @@
 				2C7E90F41C7990D200923016 /* HNSBezierPath.m in Sources */,
 				2CA92F561C74443F001F9A89 /* HNSViewController.m in Sources */,
 				983F33261C6C025900BB4A75 /* ViewController.m in Sources */,
+				985686E31C7D4A43004549C7 /* HNSMenuItem.m in Sources */,
 				2CA92F651C75A9B3001F9A89 /* HNSControl.m in Sources */,
 				983F33231C6C025900BB4A75 /* main.m in Sources */,
 				983F33201C6C025900BB4A75 /* AppDelegate.m in Sources */,
