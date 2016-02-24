@@ -11,6 +11,8 @@ module Model
 ,   appModelInit
 ,   appModelUpdate
 ,   appModelQuery
+,   appModelUndo
+,   appModelRedo
 )
 where
 
@@ -20,8 +22,12 @@ import AppFoundation.HModel
 
 
 
+type AppModelPrev = Maybe AppModel
+type AppModelNext = Maybe AppModel
+
+
 data MousePos = MousePos Double Double
-data AppModel = AppModel MousePos
+data AppModel = AppModel MousePos AppModelPrev AppModelNext
 
 
 
@@ -44,4 +50,19 @@ appModelUpdate m = modelUpdate m appModelName
 
 appModelQuery :: (AppModel -> IO ()) -> IO ()
 appModelQuery m = modelQuery m appModelName
+
+
+
+appModelUndo :: AppModel -> AppModel
+appModelUndo m@(AppModel _ Nothing _) = m
+appModelUndo m@(AppModel _ (Just (AppModel c' p' _)) _) = AppModel c' p' (Just m)
+
+
+
+appModelRedo :: AppModel -> AppModel
+appModelRedo m@(AppModel _ _ Nothing) = m
+appModelRedo m@(AppModel _ _ (Just (AppModel c' _ n'))) = AppModel c' (Just m) n'
+
+
+
 

@@ -10,14 +10,17 @@ module View where
 import Foreign
 
 import Cocoa.Foundation.HNSGeometry
+import Cocoa.Runtime.HNSObject
 
+import Cocoa.AppKit.HNSApp
 import Cocoa.AppKit.HNSView
 import Cocoa.AppKit.HNSButton
 import Cocoa.AppKit.HNSColor
 import Cocoa.AppKit.HNSBezierPath
+import Cocoa.AppKit.HNSMenuItem
 
 import Model
-
+import AppDelegate
 
 
 
@@ -30,6 +33,71 @@ buttonFrame btnW btnH (HNSRect _ _ w _) =
                     y' = 10
                 in
                     (HNSRect x' y' btnW btnH)
+
+
+
+
+foreign import ccall "wrapper" mkMenuItemAction :: (Ptr HNSMenuItemObj -> Ptr HNSViewObj -> IO ()) ->
+                                                    IO (FunPtr (Ptr HNSMenuItemObj -> Ptr HNSViewObj -> IO ()))
+
+
+
+appDelegate :: IO (Ptr AppDelegate)
+appDelegate = nsApp_delegate
+
+
+
+menuUndo :: HNSMenuItem a => Ptr a -> Ptr HNSViewObj -> IO ()
+menuUndo _ view = 
+        do
+            appModelUpdate appModelUndo
+            nsView_setNeedsDisplay view True
+
+
+menuRedo :: HNSMenuItem a => Ptr a -> Ptr HNSViewObj -> IO ()
+menuRedo _ view =
+        do
+            appModelUpdate appModelRedo
+            nsView_setNeedsDisplay view True
+
+
+canUndo (AppModel _ Nothing _) = False
+canUndo _ = True
+
+
+canRedo (AppModel _ _ Nothing) = False
+canRedo _ = True
+
+
+
+updateUndoRedo :: AppModel -> Ptr HNSViewObj -> IO ()
+updateUndoRedo m view =
+                        do
+                            delegate <- appDelegate
+                            undoMenu <- appDelegate_undo delegate
+                            redoMenu <- appDelegate_redo delegate
+
+                            if (canUndo m)
+                                then
+                                    do
+                                        menuUndoAction <- mkMenuItemAction menuUndo
+                                        nsMenuItem_setAction undoMenu view menuUndoAction
+                                else
+                                    do
+                                        nsMenuItem_removeAction undoMenu
+
+                            if (canRedo m)
+                                then
+                                    do
+                                        menuRedoAction <- mkMenuItemAction menuRedo
+                                        nsMenuItem_setAction redoMenu view menuRedoAction
+                                else 
+                                    do
+                                        nsMenuItem_removeAction redoMenu
+
+
+
+
 
 
 
@@ -52,6 +120,7 @@ view_drawRect view _ _ _ _ =
                                 nsBezierPath_setLineWidth path 3.0
                                 nsBezierPath_strok path
 
+                                {-
                                 liveResize <- nsView_inLiveResize view
                                 if liveResize
                                     then
@@ -60,15 +129,20 @@ view_drawRect view _ _ _ _ =
                                             appModelUpdate f
                                     else
                                         appModelUpdate id
-                                            
-
+                                -}
+                                
                                 appModelQuery showModel where
-                                    showModel (AppModel (MousePos x' y')) =
-                                        do
-                                            path <- nsBezierPathWithRoundedRect (centerFor x' y' 10) 3 3
-                                            nsBezierPath_setLineWidth path 2.0
-                                            nsBezierPath_strok path where
-                                                centerFor x y w = (HNSRect (x - w / 2.0) (y - w / 2.0) w w)  
+                                    showModel m@(AppModel (MousePos x' y') prev next) =
+                                            do
+                                                path <- nsBezierPathWithRoundedRect (centerFor x' y' 10) 3 3
+                                                nsBezierPath_setLineWidth path 2.0
+                                                nsBezierPath_strok path
+                                                updateUndoRedo m view
+                                                    where
+                                                        centerFor x y w = (HNSRect (x - w / 2.0) (y - w / 2.0) w w)
+
+
+
 
 
 
@@ -76,7 +150,7 @@ view_drawRect view _ _ _ _ =
 view_mouseDown :: Ptr HNSViewObj -> Double -> Double -> IO ()
 
 view_mouseDown view x y =
-                let f _ = (AppModel (MousePos x y)) in
+                let f m = (AppModel (MousePos x y) (Just m) Nothing) in
                     do appModelUpdate f
                        nsView_setNeedsDisplay view True
 
