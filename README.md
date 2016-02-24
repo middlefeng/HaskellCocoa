@@ -29,3 +29,16 @@ Three categories of methods are exported from Haskell to Objective-C.
 2. Callback through Cocoa's target-action patter (i.e. through <code>@selector</code>).
 3. Callback through C block.
 
+#### Application Class Methond Implementation
+
+Exported as ordinary Haskell methods. Follow the name pattern: <code>[className]_[methodName]</code>.
+
+#### Target-Action
+
+Actions and targets are registered as dynamic Haskell <code>FunPtr</code> and Haskell data. The <code>FunPtr</code> is of type:
+
+<code>(HNS__ a, HNSObject b) => FunPtr (Ptr a -> Ptr b -> IO ())</code>
+
+When the <code>FunPtr</code> and the <code>a</code> appear in the Haskell registration method, they are constraint by typeclass as above. When they appear in the FFI method import, they are not constraint by typeclass in order to make FFI work. When they appear in the definition of the action in Haskell, they are in concrete term type.
+
+A target-action is registered on the Objective-C side with the help of a proxy class, HNS___Delegate. Its <code>@selector(actionFunc:)</code> is used as the actual action, which calls the Haskell exported <code>FunPtr</code>. Its <code>dealloc</code> is responsible for releasing the <code>FunPtr</code> when the action is deregistered.
