@@ -14,6 +14,7 @@ where
 
 
 import Foreign
+import Cocoa.Runtime.HNSObject
 import Cocoa.AppKit.HNSView
 
 

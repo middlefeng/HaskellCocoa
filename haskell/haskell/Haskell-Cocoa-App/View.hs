@@ -37,8 +37,8 @@ buttonFrame btnW btnH (HNSRect _ _ w _) =
 
 
 
-foreign import ccall "wrapper" mkMenuItemAction :: (Ptr HNSMenuItemObj -> IO ()) ->
-                                                    IO (FunPtr (Ptr HNSMenuItemObj -> IO ()))
+foreign import ccall "wrapper" mkMenuItemAction :: (Ptr HNSMenuItemObj -> Ptr HNSViewObj -> IO ()) ->
+                                                    IO (FunPtr (Ptr HNSMenuItemObj -> Ptr HNSViewObj -> IO ()))
 
 
 
@@ -47,12 +47,18 @@ appDelegate = nsApp_delegate
 
 
 
-menuUndo :: HNSMenuItem a => Ptr a -> IO ()
-menuUndo _ = appModelUpdate appModelUndo
+menuUndo :: HNSMenuItem a => Ptr a -> Ptr HNSViewObj -> IO ()
+menuUndo _ view = 
+        do
+            appModelUpdate appModelUndo
+            nsView_setNeedsDisplay view True
 
 
-menuRedo :: HNSMenuItem a => Ptr a -> IO ()
-menuRedo _ = appModelUpdate appModelRedo
+menuRedo :: HNSMenuItem a => Ptr a -> Ptr HNSViewObj -> IO ()
+menuRedo _ view =
+        do
+            appModelUpdate appModelRedo
+            nsView_setNeedsDisplay view True
 
 
 canUndo (AppModel _ Nothing _) = False
@@ -64,8 +70,8 @@ canRedo _ = True
 
 
 
-updateUndoRedo :: AppModel -> IO ()
-updateUndoRedo m =
+updateUndoRedo :: AppModel -> Ptr HNSViewObj -> IO ()
+updateUndoRedo m view =
                         do
                             delegate <- appDelegate
                             undoMenu <- appDelegate_undo delegate
@@ -75,16 +81,16 @@ updateUndoRedo m =
                                 then
                                     do
                                         menuUndoAction <- mkMenuItemAction menuUndo
-                                        nsMenuItem_setAction undoMenu menuUndoAction
+                                        nsMenuItem_setAction undoMenu view menuUndoAction
                                 else
                                     do
-                                        nsMenuItem_removeAction redoMenu
+                                        nsMenuItem_removeAction undoMenu
 
                             if (canRedo m)
                                 then
                                     do
                                         menuRedoAction <- mkMenuItemAction menuRedo
-                                        nsMenuItem_setAction redoMenu menuRedoAction
+                                        nsMenuItem_setAction redoMenu view menuRedoAction
                                 else 
                                     do
                                         nsMenuItem_removeAction redoMenu
@@ -131,7 +137,7 @@ view_drawRect view _ _ _ _ =
                                                 path <- nsBezierPathWithRoundedRect (centerFor x' y' 10) 3 3
                                                 nsBezierPath_setLineWidth path 2.0
                                                 nsBezierPath_strok path
-                                                updateUndoRedo m
+                                                updateUndoRedo m view
                                                     where
                                                         centerFor x y w = (HNSRect (x - w / 2.0) (y - w / 2.0) w w)
 

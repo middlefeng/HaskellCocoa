@@ -11,12 +11,13 @@
 #import "HNSObject.h"
 
 
-typedef void (*HsAction)(HsPtr menuItem);
+typedef void (*HsAction)(HsPtr menuItem, HsPtr target);
 
 
 @interface HNSMenuItemTarget : NSObject
 
 @property (assign, nonatomic) HsFunPtr hsAction;
+@property (assign, nonatomic) HsPtr hsTarget;
 @property (strong, nonatomic) id menuItemTarget;
 
 - (void)actionFunc:(id)sender;
@@ -30,7 +31,7 @@ typedef void (*HsAction)(HsPtr menuItem);
 - (void)actionFunc:(id)sender
 {
     HsAction pAction = (HsAction)_hsAction;
-    pAction((__bridge HsPtr)sender);
+    pAction((__bridge HsPtr)sender, _hsTarget);
 }
 
 - (void)dealloc
@@ -45,13 +46,14 @@ typedef void (*HsAction)(HsPtr menuItem);
 
 void hns_menuItem_removeAction(HsPtr menuItem);
 
-void hns_menuItem_setAction(HsPtr menuItem, HsFunPtr action)
+void hns_menuItem_setAction(HsPtr menuItem, HsPtr hsTarget, HsFunPtr action)
 {
     hns_menuItem_removeAction(menuItem);
     
     NSMenuItem* pItem = (__bridge NSMenuItem*)menuItem;
     HNSMenuItemTarget* target = [HNSMenuItemTarget new];
     target.hsAction = action;
+    target.hsTarget = hsTarget;
     hns_retain(target);
     
     pItem.target = target;
