@@ -24,15 +24,15 @@ import Model
 
 
 
-foreign import ccall "wrapper" mkFreeFunPtr :: (Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()) ->
-                                                IO (FunPtr (Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()))
+foreign import ccall "wrapper" mkFreeFunPtr :: (Ptr HNSButtonObj -> IO ()) ->
+                                                IO (FunPtr (Ptr HNSButtonObj -> IO ()))
 
 
 
 
-viewController_testButtonAction :: Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()
+viewController_testButtonAction :: Ptr HNSButtonObj -> IO ()
 
-viewController_testButtonAction button _ = 
+viewController_testButtonAction button = 
                             let buttonLabel button' =
                                     nsButton_setTitle button' "Tested" in
                                 do
