@@ -12,13 +12,14 @@
 #import "HNSControl.h"
 
 
-typedef void (*HsAction)(HsPtr control);
+typedef void (*HsAction)(HsPtr control, HsPtr target);
 
 
 
 @interface HNSControlTarget : NSObject
 
 @property (assign, nonatomic) HsFunPtr hsAction;
+@property (assign, nonatomic) HsPtr hsTarget;
 @property (strong, nonatomic) id controlTarget;
 
 - (void)actionFunc:(id)sender;
@@ -32,7 +33,7 @@ typedef void (*HsAction)(HsPtr control);
 - (void)actionFunc:(id)sender
 {
     HsAction pAction = (HsAction)_hsAction;
-    pAction((__bridge HsPtr)sender);
+    pAction((__bridge HsPtr)sender, _hsTarget);
 }
 
 - (void)dealloc
@@ -48,13 +49,14 @@ void hns_control_removeAction(HsPtr control);
 
 
 
-void hns_control_setAction(HsPtr control, HsFunPtr action)
+void hns_control_setAction(HsPtr control, HsPtr hsTarget, HsFunPtr action)
 {
     hns_control_removeAction(control);
     
     NSControl* pControl = (__bridge NSControl*)control;
     HNSControlTarget* target = [HNSControlTarget new];
     target.hsAction = action;
+    target.hsTarget = hsTarget;
     hns_retain(target);
     
     pControl.target = target;
