@@ -17,7 +17,7 @@ where
 
 
 import Foreign
-
+import Cocoa.Runtime.HNSObject
 
 
 
