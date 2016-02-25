@@ -8,10 +8,12 @@
 module AppFoundation.HModelUndoRedo
 (
     HistoryModel(..)
+,   modelHistoryStart
 ,   modelCanUndo
 ,   modelUpdateUndo
 ,   modelCanRedo
 ,   modelUpdateRedo
+,   modelAppend
 )
 where
 
@@ -60,5 +62,26 @@ modelUpdateRedo m =
 modelCanRedo :: HistoryModel a -> Bool
 modelCanRedo m = case (historyModelNext m) of Nothing -> False
                                               _       -> True
+
+
+
+
+modelAppend :: HistoryModel a -> a -> HistoryModel a
+modelAppend model a = HistoryModel  {
+                                        historyModelCurrent = a
+                                    ,   historyModelPrev = Just model
+                                    ,   historyModelNext = Nothing   
+                                    }
+
+
+
+modelHistoryStart :: a -> HistoryModel a
+modelHistoryStart a = HistoryModel  {
+                                        historyModelCurrent = a
+                                    ,   historyModelPrev = Nothing
+                                    ,   historyModelNext = Nothing   
+                                    }
+
+
 
 

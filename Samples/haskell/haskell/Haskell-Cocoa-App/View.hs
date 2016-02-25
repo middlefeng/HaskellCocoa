@@ -9,6 +9,7 @@ module View where
 
 import Foreign
 
+import AppFoundation.HModelUndoRedo
 import Cocoa.Foundation.HNSGeometry
 
 import Cocoa.AppKit.HNSApp
@@ -60,16 +61,6 @@ menuRedo _ view =
             nsView_setNeedsDisplay view True
 
 
-canUndo :: AppModel -> Bool
-canUndo (AppModel _ Nothing _) = False
-canUndo _ = True
-
-
-canRedo :: AppModel -> Bool
-canRedo (AppModel _ _ Nothing) = False
-canRedo _ = True
-
-
 
 updateUndoRedo :: AppModel -> Ptr HNSViewObj -> IO ()
 updateUndoRedo m view =
@@ -78,7 +69,7 @@ updateUndoRedo m view =
                             undoMenu <- appDelegate_undo delegate
                             redoMenu <- appDelegate_redo delegate
 
-                            if (canUndo m)
+                            if (modelCanUndo m)
                                 then
                                     do
                                         menuUndoAction <- mkMenuItemAction menuUndo
@@ -87,7 +78,7 @@ updateUndoRedo m view =
                                     do
                                         nsMenuItem_removeAction undoMenu
 
-                            if (canRedo m)
+                            if (modelCanRedo m)
                                 then
                                     do
                                         menuRedoAction <- mkMenuItemAction menuRedo
@@ -134,8 +125,9 @@ view_drawRect view _ _ _ _ =
                                 -}
                                 
                                 appModelQuery showModel where
-                                    showModel m@(AppModel (MousePos x' y') _ _) =
+                                    showModel m =
                                             do
+                                                let (MousePos x' y') = historyModelCurrent m
                                                 path <- nsBezierPathWithRoundedRect (centerFor x' y' 10) 3 3
                                                 nsBezierPath_setLineWidth path 2.0
                                                 nsBezierPath_strok path
@@ -152,9 +144,9 @@ view_drawRect view _ _ _ _ =
 view_mouseDown :: Ptr HNSViewObj -> Double -> Double -> IO ()
 
 view_mouseDown view x y =
-                let f m = (AppModel (MousePos x y) (Just m) Nothing) in
-                    do appModelUpdate f
-                       nsView_setNeedsDisplay view True
+                do
+                    appModelUpdate (\m -> modelAppend m (MousePos x y))
+                    nsView_setNeedsDisplay view True
 
 
 
