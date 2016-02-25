@@ -19,6 +19,10 @@ where
 
 
 
+import Data.List.NonEmpty
+
+
+
 data HistoryModel a = HistoryModel
         {
             historyModelCurrent :: a
@@ -67,11 +71,32 @@ modelCanRedo m = case (historyModelNext m) of Nothing -> False
 
 
 modelAppend :: HistoryModel a -> a -> HistoryModel a
-modelAppend model a = HistoryModel  {
-                                        historyModelCurrent = a
-                                    ,   historyModelPrev = Just model
-                                    ,   historyModelNext = Nothing   
-                                    }
+modelAppend model a = reversedListToModel (a :| ((toList . modelToReversedList) model))
+                            where
+
+                                modelToReversedList :: HistoryModel a -> NonEmpty a
+                                modelToReversedList model' =
+                                    case historyModelPrev model' of
+                                        Nothing -> (historyModelCurrent model') :| []
+                                        Just m  -> (historyModelCurrent model') :| ((toList . modelToReversedList) m)
+
+                                reversedListToModel :: NonEmpty a -> HistoryModel a
+                                reversedListToModel (a' :| []) =
+                                                                HistoryModel
+                                                                {
+                                                                    historyModelCurrent = a'
+                                                                ,   historyModelPrev = Nothing
+                                                                ,   historyModelNext = Nothing
+                                                                }
+                                reversedListToModel (a' :| (x:xs)) = 
+                                                                HistoryModel
+                                                                {
+                                                                    historyModelCurrent = a'
+                                                                ,   historyModelPrev = Just (reversedListToModel (x :| xs))
+                                                                ,   historyModelNext = Nothing
+                                                                }
+
+                                    
 
 
 

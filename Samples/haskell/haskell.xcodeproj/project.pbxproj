@@ -471,8 +471,13 @@
 				LIBRARY_SEARCH_PATHS = (
 					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/rts",
 					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/base_HQfYBxpPvuw8OunzQu6JGM",
+					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/deeps_6vMKxt5sPFR0XsbRWvvq59",
 					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/ghcpr_8TmvWUcS1U1IKHT0levwg3",
 					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/integ_2aU3IZNMF9a7mQ0OzsZ0dS",
+					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/bytes_6VWy06pWzJq9evDvK2d4w6",
+					"~/.stack/snapshots/x86_64-osx/lts-5.2/7.10.3/lib/x86_64-osx-ghc-7.10.3/semigroups-0.18.1-H2hg0TRK56868o42AJ7WhP",
+					"~/.stack/snapshots/x86_64-osx/lts-5.2/7.10.3/lib/x86_64-osx-ghc-7.10.3/hashable-1.2.4.0-8GjadD03dR57AKCJdr90LD",
+					"~/.stack/snapshots/x86_64-osx/lts-5.2/7.10.3/lib/x86_64-osx-ghc-7.10.3/text-1.2.2.0-5c7VCmRXJenGcMPs3kwpkI",
 				);
 				OTHER_LDFLAGS = (
 					"-lCffi",
@@ -480,6 +485,11 @@
 					"-lHSbase-4.8.2.0-HQfYBxpPvuw8OunzQu6JGM",
 					"-lHSinteger-gmp-1.0.0.0-2aU3IZNMF9a7mQ0OzsZ0dS",
 					"-lHSghc-prim-0.4.0.0-8TmvWUcS1U1IKHT0levwg3",
+					"-lHSsemigroups-0.18.1-H2hg0TRK56868o42AJ7WhP",
+					"-lHSdeepseq-1.4.1.1-6vMKxt5sPFR0XsbRWvvq59",
+					"-lHShashable-1.2.4.0-8GjadD03dR57AKCJdr90LD",
+					"-lHSbytestring-0.10.6.0-6VWy06pWzJq9evDvK2d4w6",
+					"-lHStext-1.2.2.0-5c7VCmRXJenGcMPs3kwpkI",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fengdong.haskell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -497,8 +507,13 @@
 				LIBRARY_SEARCH_PATHS = (
 					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/rts",
 					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/base_HQfYBxpPvuw8OunzQu6JGM",
+					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/deeps_6vMKxt5sPFR0XsbRWvvq59",
 					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/ghcpr_8TmvWUcS1U1IKHT0levwg3",
 					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/integ_2aU3IZNMF9a7mQ0OzsZ0dS",
+					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/bytes_6VWy06pWzJq9evDvK2d4w6",
+					"~/.stack/snapshots/x86_64-osx/lts-5.2/7.10.3/lib/x86_64-osx-ghc-7.10.3/semigroups-0.18.1-H2hg0TRK56868o42AJ7WhP",
+					"~/.stack/snapshots/x86_64-osx/lts-5.2/7.10.3/lib/x86_64-osx-ghc-7.10.3/hashable-1.2.4.0-8GjadD03dR57AKCJdr90LD",
+					"~/.stack/snapshots/x86_64-osx/lts-5.2/7.10.3/lib/x86_64-osx-ghc-7.10.3/text-1.2.2.0-5c7VCmRXJenGcMPs3kwpkI",
 				);
 				OTHER_LDFLAGS = (
 					"-lCffi",
@@ -506,6 +521,11 @@
 					"-lHSbase-4.8.2.0-HQfYBxpPvuw8OunzQu6JGM",
 					"-lHSinteger-gmp-1.0.0.0-2aU3IZNMF9a7mQ0OzsZ0dS",
 					"-lHSghc-prim-0.4.0.0-8TmvWUcS1U1IKHT0levwg3",
+					"-lHSsemigroups-0.18.1-H2hg0TRK56868o42AJ7WhP",
+					"-lHSdeepseq-1.4.1.1-6vMKxt5sPFR0XsbRWvvq59",
+					"-lHShashable-1.2.4.0-8GjadD03dR57AKCJdr90LD",
+					"-lHSbytestring-0.10.6.0-6VWy06pWzJq9evDvK2d4w6",
+					"-lHStext-1.2.2.0-5c7VCmRXJenGcMPs3kwpkI",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fengdong.haskell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
