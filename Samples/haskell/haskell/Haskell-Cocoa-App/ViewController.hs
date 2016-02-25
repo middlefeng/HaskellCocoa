@@ -19,6 +19,7 @@ import Cocoa.AppKit.HNSButton
 import Cocoa.AppKit.HNSApp
 import Cocoa.AppKit.HNSAlert 
 
+import AppFoundation.HModelUndoRedo
 import View
 import Model
 
@@ -48,7 +49,7 @@ viewController_loadView :: Ptr HNSViewControllerObj -> IO ()
 
 viewController_loadView viewController =
                                 do
-                                    appModelInit (AppModel (MousePos 0 0) Nothing Nothing)
+                                    appModelInit (modelHistoryStart (MousePos 0 0))
 
                                     view <- nsViewController_view viewController
                                     viewFrame <- nsView_frame view
