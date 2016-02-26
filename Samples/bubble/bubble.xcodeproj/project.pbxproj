@@ -91,7 +91,7 @@
 		2CA92F6F1C75CA06001F9A89 /* HNSObject.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSObject.o; path = ../../HaskellCocoa/Cocoa/Runtime/HNSObject.o; sourceTree = "<group>"; };
 		2CCE7BDA1C7D9B380020C2A6 /* HNSMenuItem.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSMenuItem.o; path = ../../HaskellCocoa/Cocoa/AppKit/HNSMenuItem.o; sourceTree = "<group>"; };
 		2CCE7BDC1C7D9B5A0020C2A6 /* AppDelegate.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = AppDelegate.o; path = "bubble/Haskell-Cocoa-App/AppDelegate.o"; sourceTree = "<group>"; };
-		983F331B1C6C025900BB4A75 /* haskell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haskell.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		983F331B1C6C025900BB4A75 /* bubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983F331E1C6C025900BB4A75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		983F331F1C6C025900BB4A75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		983F33221C6C025900BB4A75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 		983F331C1C6C025900BB4A75 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				983F331B1C6C025900BB4A75 /* haskell.app */,
+				983F331B1C6C025900BB4A75 /* bubble.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -243,7 +243,7 @@
 				983F33211C6C025900BB4A75 /* Supporting Files */,
 			);
 			name = src;
-			path = haskell;
+			path = bubble;
 			sourceTree = "<group>";
 		};
 		983F33211C6C025900BB4A75 /* Supporting Files */ = {
@@ -283,9 +283,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		983F331A1C6C025900BB4A75 /* haskell */ = {
+		983F331A1C6C025900BB4A75 /* bubble */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 983F332F1C6C025900BB4A75 /* Build configuration list for PBXNativeTarget "haskell" */;
+			buildConfigurationList = 983F332F1C6C025900BB4A75 /* Build configuration list for PBXNativeTarget "bubble" */;
 			buildPhases = (
 				983F33171C6C025900BB4A75 /* Sources */,
 				983F33181C6C025900BB4A75 /* Frameworks */,
@@ -295,9 +295,9 @@
 			);
 			dependencies = (
 			);
-			name = haskell;
+			name = bubble;
 			productName = haskell;
-			productReference = 983F331B1C6C025900BB4A75 /* haskell.app */;
+			productReference = 983F331B1C6C025900BB4A75 /* bubble.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -314,7 +314,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 983F33161C6C025900BB4A75 /* Build configuration list for PBXProject "haskell" */;
+			buildConfigurationList = 983F33161C6C025900BB4A75 /* Build configuration list for PBXProject "bubble" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -327,7 +327,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				983F331A1C6C025900BB4A75 /* haskell */,
+				983F331A1C6C025900BB4A75 /* bubble */,
 			);
 		};
 /* End PBXProject section */
@@ -466,7 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = haskell/Info.plist;
+				INFOPLIST_FILE = bubble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/rts",
@@ -502,7 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = haskell/Info.plist;
+				INFOPLIST_FILE = bubble/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"~/.stack/programs/x86_64-osx/ghc-7.10.3/lib/ghc-7.10.3/rts",
@@ -536,7 +536,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		983F33161C6C025900BB4A75 /* Build configuration list for PBXProject "haskell" */ = {
+		983F33161C6C025900BB4A75 /* Build configuration list for PBXProject "bubble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				983F332D1C6C025900BB4A75 /* Debug */,
@@ -545,7 +545,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		983F332F1C6C025900BB4A75 /* Build configuration list for PBXNativeTarget "haskell" */ = {
+		983F332F1C6C025900BB4A75 /* Build configuration list for PBXNativeTarget "bubble" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				983F33301C6C025900BB4A75 /* Debug */,
