@@ -50,9 +50,9 @@
 		2C23438F1C7C2C49005EEA7B /* HModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HModel.h; sourceTree = "<group>"; };
 		2C2343901C7C2C49005EEA7B /* HModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HModel.m; sourceTree = "<group>"; };
 		2C2343921C7C32B9005EEA7B /* HModel.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HModel.o; path = ../../HaskellCocoa/AppFoundation/HModel.o; sourceTree = "<group>"; };
-		2C2343941C7C3A42005EEA7B /* Model.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = Model.o; path = "haskell/Haskell-Cocoa-App/Model.o"; sourceTree = "<group>"; };
+		2C2343941C7C3A42005EEA7B /* Model.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = Model.o; path = "bubble/Haskell-Cocoa-App/Model.o"; sourceTree = "<group>"; };
 		2C338FB91C6FE341003A138A /* ViewController_stub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController_stub.h; sourceTree = "<group>"; };
-		2C338FBA1C6FE394003A138A /* ViewController.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = ViewController.o; path = "haskell/Haskell-Cocoa-App/ViewController.o"; sourceTree = "<group>"; };
+		2C338FBA1C6FE394003A138A /* ViewController.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = ViewController.o; path = "bubble/Haskell-Cocoa-App/ViewController.o"; sourceTree = "<group>"; };
 		2C7E90DD1C75CE5A00923016 /* HNSAlert.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSAlert.o; path = ../../HaskellCocoa/Cocoa/AppKit/HNSAlert.o; sourceTree = "<group>"; };
 		2C7E90DF1C76372A00923016 /* HNSApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSApp.h; sourceTree = "<group>"; };
 		2C7E90E01C76372A00923016 /* HNSApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSApp.m; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		2C7E90E71C76530E00923016 /* HNSWindow.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSWindow.o; path = ../../HaskellCocoa/Cocoa/AppKit/HNSWindow.o; sourceTree = "<group>"; };
 		2C7E90EC1C7921D400923016 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
 		2C7E90ED1C7921D400923016 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
-		2C7E90EF1C7926DE00923016 /* View.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = View.o; path = "haskell/Haskell-Cocoa-App/View.o"; sourceTree = "<group>"; };
+		2C7E90EF1C7926DE00923016 /* View.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = View.o; path = "bubble/Haskell-Cocoa-App/View.o"; sourceTree = "<group>"; };
 		2C7E90F11C79298500923016 /* View_stub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = View_stub.h; sourceTree = "<group>"; };
 		2C7E90F21C7990D200923016 /* HNSBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSBezierPath.h; sourceTree = "<group>"; };
 		2C7E90F31C7990D200923016 /* HNSBezierPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSBezierPath.m; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		2CA92F6D1C75C99B001F9A89 /* HNSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSObject.m; sourceTree = "<group>"; };
 		2CA92F6F1C75CA06001F9A89 /* HNSObject.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSObject.o; path = ../../HaskellCocoa/Cocoa/Runtime/HNSObject.o; sourceTree = "<group>"; };
 		2CCE7BDA1C7D9B380020C2A6 /* HNSMenuItem.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSMenuItem.o; path = ../../HaskellCocoa/Cocoa/AppKit/HNSMenuItem.o; sourceTree = "<group>"; };
-		2CCE7BDC1C7D9B5A0020C2A6 /* AppDelegate.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = AppDelegate.o; path = "haskell/Haskell-Cocoa-App/AppDelegate.o"; sourceTree = "<group>"; };
+		2CCE7BDC1C7D9B5A0020C2A6 /* AppDelegate.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = AppDelegate.o; path = "bubble/Haskell-Cocoa-App/AppDelegate.o"; sourceTree = "<group>"; };
 		983F331B1C6C025900BB4A75 /* haskell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haskell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983F331E1C6C025900BB4A75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		983F331F1C6C025900BB4A75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 				2C7E90F11C79298500923016 /* View_stub.h */,
 			);
 			name = "Haskell-Cocoa-App";
-			path = "haskell/Haskell-Cocoa-App";
+			path = "bubble/Haskell-Cocoa-App";
 			sourceTree = "<group>";
 		};
 		2CA92F461C74440C001F9A89 /* Cocoa */ = {
