@@ -13,6 +13,7 @@ import Cocoa.Runtime.HNSObject
 import Cocoa.Foundation.HNSGeometry
 
 import Cocoa.AppKit.HNSView
+import Cocoa.AppKit.HNSScrollView
 import Cocoa.AppKit.HNSViewController
 import Cocoa.AppKit.HNSControl
 import Cocoa.AppKit.HNSButton
@@ -28,6 +29,13 @@ import Model
 foreign import ccall "wrapper" mkFreeFunPtr :: (Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()) ->
                                                 IO (FunPtr (Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()))
 
+
+
+scrollViewFrame :: Double -> Double -> HNSRect
+
+scrollViewFrame w h = (HNSRect x y (w - 150) (h - 150)) where
+                            x = 60
+                            y = 90
 
 
 
@@ -50,7 +58,17 @@ viewController_loadView :: Ptr HNSViewControllerObj -> IO ()
 viewController_loadView viewController =
                                 do
                                     appModelInit (modelHistoryStart (MousePos 0 0))
+                                    
+                                    viewController_loadViewButtons viewController
+                                    viewController_loadViewScrollableContent viewController
 
+
+
+
+viewController_loadViewButtons :: Ptr HNSViewControllerObj -> IO ()
+
+viewController_loadViewButtons viewController =
+                                do
                                     view <- nsViewController_view viewController
                                     viewFrame <- nsView_frame view
                                     button <- nsButtonCreate
@@ -65,6 +83,24 @@ viewController_loadView viewController =
 
                                     view_setUserButton view button
                                     nsRelease button
+
+
+
+viewController_loadViewScrollableContent :: Ptr HNSViewControllerObj -> IO ()
+
+viewController_loadViewScrollableContent viewController =
+                                do
+                                    scrollView <- nsScrollViewCreate
+                                  
+                                    view <- nsViewController_view viewController  
+                                    (HNSRect _ _ w h) <- nsView_frame view
+                                    nsView_setFrame scrollView (scrollViewFrame w h)
+                                    nsView_addSubview view scrollView
+
+                                    nsRelease scrollView
+
+
+
 
 
 

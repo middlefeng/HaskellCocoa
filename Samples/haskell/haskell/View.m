@@ -16,6 +16,7 @@
 @interface View()
 
 @property (nonatomic, weak) NSButton* userButton;
+//@property (nonatomic, strong) NSScrollView* scrollView;
 
 @end
 
