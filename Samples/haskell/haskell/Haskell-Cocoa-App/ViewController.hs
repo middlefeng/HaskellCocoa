@@ -31,13 +31,6 @@ foreign import ccall "wrapper" mkFreeFunPtr :: (Ptr HNSButtonObj -> Ptr HNSViewC
 
 
 
-scrollViewFrame :: Double -> Double -> HNSRect
-
-scrollViewFrame w h = (HNSRect x y (w - 150) (h - 150)) where
-                            x = 60
-                            y = 90
-
-
 
 viewController_testButtonAction :: Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()
 
@@ -91,11 +84,18 @@ viewController_loadViewScrollableContent :: Ptr HNSViewControllerObj -> IO ()
 viewController_loadViewScrollableContent viewController =
                                 do
                                     scrollView <- nsScrollViewCreate
+                                    nsScrollView_setHasHorizontalScroller scrollView True
+                                    nsScrollView_setHasVerticalScroller scrollView True
                                   
                                     view <- nsViewController_view viewController  
                                     (HNSRect _ _ w h) <- nsView_frame view
                                     nsView_setFrame scrollView (scrollViewFrame w h)
                                     nsView_addSubview view scrollView
+
+                                    docView <- nsViewCreate
+                                    nsScrollView_setDocumentView scrollView docView
+                                    nsView_setFrame docView (HNSRect 0 0 800 800)
+                                    nsRelease docView
 
                                     view_setScrollView view scrollView
                                     nsRelease scrollView

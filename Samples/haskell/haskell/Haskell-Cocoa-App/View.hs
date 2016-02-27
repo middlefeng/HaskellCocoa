@@ -38,6 +38,16 @@ buttonFrame btnW btnH (HNSRect _ _ w _) =
 
 
 
+
+scrollViewFrame :: Double -> Double -> HNSRect
+
+scrollViewFrame w h = (HNSRect inset (inset + offset) (w - inset * 2.0) (h - inset * 2.0 - offset)) where
+                            inset = 40
+                            offset = 30
+
+
+
+
 foreign import ccall "wrapper" mkMenuItemAction :: (Ptr HNSMenuItemObj -> Ptr HNSViewObj -> IO ()) ->
                                                     IO (FunPtr (Ptr HNSMenuItemObj -> Ptr HNSViewObj -> IO ()))
 
@@ -98,7 +108,9 @@ view_drawRect :: Ptr HNSViewObj -> Double -> Double -> Double -> Double -> IO ()
 
 view_drawRect view _ _ _ _ = 
                         let inSet :: HNSRect -> Double -> HNSRect
-                            inSet (HNSRect x' y' w' h') i = (HNSRect (x' + i) (y' + i) (w' - i * 2.0) (h' - i * 2.0))
+                            inSet (HNSRect x' y' w' h') i = (HNSRect (x' + i) (y' + i + offset)
+                                                                     (w' - i * 2.0) (h' - i * 2.0 - offset))
+                                                                where offset = 30.0
 
                             -- center (HNSRect x' y' w' h') = (x' + w' / 2.0, y' + h' / 2.0
                         in
@@ -107,6 +119,11 @@ view_drawRect view _ _ _ _ =
                                 viewFrame <- nsView_frame view
                                 button <- view_userButton view
                                 nsView_setFrame button (buttonFrame 100.0 30.0 viewFrame)
+
+                                let (HNSRect _ _ w h) = viewFrame
+                                scrollView <- view_scrollView view
+                                nsView_setFrame scrollView (scrollViewFrame w h)
+                                contentView <- (nsSCrollView_contentView scrollView :: IO (Ptr HNSViewObj))
 
                                 color <- nsColorCreate 0.2 0.2 0.2 1.0
                                 nsColor_set color

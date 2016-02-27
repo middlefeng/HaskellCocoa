@@ -9,6 +9,16 @@
 #import <AppKit/AppKit.h>
 
 #import "HNSView.h"
+#import "HNSObject.h"
+
+
+
+HsPtr hns_ViewCreate(void)
+{
+    NSView* pView = [[NSView alloc] init];
+    hns_retain(pView);
+    return (__bridge HsPtr)pView;
+}
 
 
 void hns_view_addSubview(HsPtr view, HsPtr subview)

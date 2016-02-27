@@ -8,7 +8,7 @@ module Cocoa.AppKit.HNSView
 (
     HNSView
 ,   HNSViewObj(..)
-,   HNSRect(..)
+,   nsViewCreate
 ,   nsView_addSubview
 ,   nsView_removeFromSuperview
 ,   nsView_setFrame
@@ -59,8 +59,13 @@ instance HNSObject HNSViewObj where
 instance HNSView HNSViewObj where
 
 
+nsViewCreate :: IO (Ptr HNSViewObj)
+nsViewCreate = hns_ViewCreate
 
 
+
+
+foreign import ccall hns_ViewCreate :: IO (Ptr HNSViewObj)
 
 foreign import ccall hns_view_addSubview :: Ptr a -> Ptr b -> IO ()
 foreign import ccall hns_view_removeFromSuperview :: Ptr a -> IO ()
