@@ -8,6 +8,10 @@
 
 #import "ContentView.h"
 
+#import "HsFFI.h"
+#import "HNSObject.h"
+
+
 @implementation ContentView
 
 - (void)drawRect:(NSRect)dirtyRect
@@ -16,3 +20,13 @@
 }
 
 @end
+
+
+
+HsPtr contentViewCreate(void)
+{
+    ContentView* pView = [[ContentView alloc] init];
+    hns_retain(pView);
+    return (__bridge HsPtr)pView;
+}
+

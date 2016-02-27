@@ -23,6 +23,7 @@ import Cocoa.AppKit.HNSAlert
 import AppFoundation.HModelUndoRedo
 import View
 import Model
+import ContentView
 
 
 
@@ -92,7 +93,7 @@ viewController_loadViewScrollableContent viewController =
                                     nsView_setFrame scrollView (scrollViewFrame w h)
                                     nsView_addSubview view scrollView
 
-                                    docView <- nsViewCreate
+                                    docView <- contentViewCreate
                                     nsScrollView_setDocumentView scrollView docView
                                     nsView_setFrame docView (HNSRect 0 0 800 800)
                                     nsRelease docView

@@ -123,7 +123,6 @@ view_drawRect view _ _ _ _ =
                                 let (HNSRect _ _ w h) = viewFrame
                                 scrollView <- view_scrollView view
                                 nsView_setFrame scrollView (scrollViewFrame w h)
-                                contentView <- (nsSCrollView_contentView scrollView :: IO (Ptr HNSViewObj))
 
                                 color <- nsColorCreate 0.2 0.2 0.2 1.0
                                 nsColor_set color

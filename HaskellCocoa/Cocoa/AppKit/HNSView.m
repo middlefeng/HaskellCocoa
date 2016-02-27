@@ -10,6 +10,7 @@
 
 #import "HNSView.h"
 #import "HNSObject.h"
+#import "HNSGeometry.h"
 
 
 
@@ -59,10 +60,20 @@ HsBool hns_view_inLiveResize(HsPtr view)
 }
 
 
-struct HsRect
+
+HsPtr hns_view_convertPointFromView(HsPtr view, HsDouble x, HsDouble y, HsPtr fromView)
 {
-    double x, y, w, h;
-};
+    NSView* pView = (__bridge NSView *)(view);
+    NSView* pFromView = (__bridge NSView *)(fromView);
+    NSPoint point = NSMakePoint(x, y);
+    
+    static struct HsPoint result;
+    NSPoint resPoint = [pView convertPoint:point fromView:pFromView];
+    result.x = resPoint.x;
+    result.y = resPoint.y;
+    return &result;
+}
+
 
 HsPtr hns_view_frame(HsPtr view)
 {
