@@ -16,7 +16,7 @@
 @interface View()
 
 @property (nonatomic, weak) NSButton* userButton;
-//@property (nonatomic, strong) NSScrollView* scrollView;
+@property (nonatomic, strong) NSScrollView* scrollView;
 
 @end
 
@@ -62,3 +62,22 @@ HsPtr view_userButton(HsPtr view)
     View* pView = (__bridge View*)view;
     return (__bridge HsPtr)pView.userButton;
 }
+
+
+
+void view_setScrollView(HsPtr view, HsPtr scrollView)
+{
+    View* pView = (__bridge View*)view;
+    NSScrollView* pScrollView = (__bridge NSScrollView*)scrollView;
+    pView.scrollView = pScrollView;
+}
+
+
+HsPtr view_scrollView(HsPtr view)
+{
+    View* pView = (__bridge View*)view;
+    return (__bridge HsPtr)pView.scrollView;
+}
+
+
+

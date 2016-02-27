@@ -14,6 +14,7 @@ import Cocoa.Foundation.HNSGeometry
 
 import Cocoa.AppKit.HNSApp
 import Cocoa.AppKit.HNSView
+import Cocoa.AppKit.HNSScrollView
 import Cocoa.AppKit.HNSButton
 import Cocoa.AppKit.HNSColor
 import Cocoa.AppKit.HNSBezierPath
@@ -153,6 +154,9 @@ view_mouseDown view x y =
 
 foreign import ccall view_setUserButton :: Ptr HNSViewObj -> Ptr HNSButtonObj -> IO ()
 foreign import ccall view_userButton :: Ptr HNSViewObj -> IO (Ptr HNSButtonObj)
+
+foreign import ccall view_setScrollView :: Ptr HNSViewObj -> Ptr HNSScrollViewObj -> IO ()
+foreign import ccall view_scrollView :: Ptr HNSViewObj -> IO (Ptr HNSScrollViewObj)
 
 foreign export ccall view_drawRect :: Ptr HNSViewObj -> Double -> Double -> Double -> Double -> IO ()
 foreign export ccall view_mouseDown :: Ptr HNSViewObj -> Double -> Double -> IO ()

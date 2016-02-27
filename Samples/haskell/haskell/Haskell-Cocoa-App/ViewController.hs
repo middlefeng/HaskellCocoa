@@ -97,6 +97,7 @@ viewController_loadViewScrollableContent viewController =
                                     nsView_setFrame scrollView (scrollViewFrame w h)
                                     nsView_addSubview view scrollView
 
+                                    view_setScrollView view scrollView
                                     nsRelease scrollView
 
 

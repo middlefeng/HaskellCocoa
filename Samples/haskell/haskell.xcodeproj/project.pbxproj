@@ -39,6 +39,7 @@
 		2CCE7BDD1C7D9B5A0020C2A6 /* AppDelegate.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCE7BDC1C7D9B5A0020C2A6 /* AppDelegate.o */; };
 		2CCE7BE01C8140C90020C2A6 /* HNSScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE7BDF1C8140C90020C2A6 /* HNSScrollView.m */; };
 		2CCE7BE21C8146380020C2A6 /* HNSScrollView.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCE7BE11C8146380020C2A6 /* HNSScrollView.o */; };
+		2CCE7BE61C8148EC0020C2A6 /* HNSMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE7BE51C8148EC0020C2A6 /* HNSMutableDictionary.m */; };
 		983F33201C6C025900BB4A75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F331F1C6C025900BB4A75 /* AppDelegate.m */; };
 		983F33231C6C025900BB4A75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F33221C6C025900BB4A75 /* main.m */; };
 		983F33261C6C025900BB4A75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F33251C6C025900BB4A75 /* ViewController.m */; };
@@ -96,6 +97,8 @@
 		2CCE7BDE1C8140C90020C2A6 /* HNSScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSScrollView.h; sourceTree = "<group>"; };
 		2CCE7BDF1C8140C90020C2A6 /* HNSScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSScrollView.m; sourceTree = "<group>"; };
 		2CCE7BE11C8146380020C2A6 /* HNSScrollView.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSScrollView.o; path = ../../HaskellCocoa/Cocoa/AppKit/HNSScrollView.o; sourceTree = "<group>"; };
+		2CCE7BE41C8148EC0020C2A6 /* HNSMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSMutableDictionary.h; sourceTree = "<group>"; };
+		2CCE7BE51C8148EC0020C2A6 /* HNSMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSMutableDictionary.m; sourceTree = "<group>"; };
 		983F331B1C6C025900BB4A75 /* haskell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haskell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983F331E1C6C025900BB4A75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		983F331F1C6C025900BB4A75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -173,6 +176,7 @@
 		2CA92F461C74440C001F9A89 /* Cocoa */ = {
 			isa = PBXGroup;
 			children = (
+				2CCE7BE31C8148D30020C2A6 /* Foundation */,
 				2CA92F6B1C75C974001F9A89 /* Runtime */,
 				2CA92F471C744414001F9A89 /* AppKit */,
 			);
@@ -215,6 +219,15 @@
 				2CA92F6D1C75C99B001F9A89 /* HNSObject.m */,
 			);
 			path = Runtime;
+			sourceTree = "<group>";
+		};
+		2CCE7BE31C8148D30020C2A6 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				2CCE7BE41C8148EC0020C2A6 /* HNSMutableDictionary.h */,
+				2CCE7BE51C8148EC0020C2A6 /* HNSMutableDictionary.m */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		983F33121C6C025900BB4A75 = {
@@ -368,6 +381,7 @@
 				2CA92F651C75A9B3001F9A89 /* HNSControl.m in Sources */,
 				983F33231C6C025900BB4A75 /* main.m in Sources */,
 				983F33201C6C025900BB4A75 /* AppDelegate.m in Sources */,
+				2CCE7BE61C8148EC0020C2A6 /* HNSMutableDictionary.m in Sources */,
 				2CA92F531C74443F001F9A89 /* HNSColor.m in Sources */,
 				2CA92F551C74443F001F9A89 /* HNSView.m in Sources */,
 				2C7E90E41C7638DF00923016 /* HNSWindow.m in Sources */,
