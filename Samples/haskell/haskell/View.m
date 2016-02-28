@@ -16,6 +16,7 @@
 @interface View()
 
 @property (nonatomic, weak) NSButton* userButton;
+@property (nonatomic, strong) NSScrollView* scrollView;
 
 @end
 
@@ -35,14 +36,6 @@
                   dirtyRect.size.height);
 }
 
-
-- (void)mouseDown:(NSEvent *)theEvent
-{
-    NSPoint loc = theEvent.locationInWindow;
-    view_mouseDown((__bridge HsPtr)self, loc.x, loc.y);
-}
-
-
 @end
 
 
@@ -61,3 +54,22 @@ HsPtr view_userButton(HsPtr view)
     View* pView = (__bridge View*)view;
     return (__bridge HsPtr)pView.userButton;
 }
+
+
+
+void view_setScrollView(HsPtr view, HsPtr scrollView)
+{
+    View* pView = (__bridge View*)view;
+    NSScrollView* pScrollView = (__bridge NSScrollView*)scrollView;
+    pView.scrollView = pScrollView;
+}
+
+
+HsPtr view_scrollView(HsPtr view)
+{
+    View* pView = (__bridge View*)view;
+    return (__bridge HsPtr)pView.scrollView;
+}
+
+
+

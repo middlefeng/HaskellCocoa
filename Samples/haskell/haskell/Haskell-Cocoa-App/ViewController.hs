@@ -13,6 +13,7 @@ import Cocoa.Runtime.HNSObject
 import Cocoa.Foundation.HNSGeometry
 
 import Cocoa.AppKit.HNSView
+import Cocoa.AppKit.HNSScrollView
 import Cocoa.AppKit.HNSViewController
 import Cocoa.AppKit.HNSControl
 import Cocoa.AppKit.HNSButton
@@ -22,6 +23,7 @@ import Cocoa.AppKit.HNSAlert
 import AppFoundation.HModelUndoRedo
 import View
 import Model
+import ContentView
 
 
 
@@ -50,7 +52,17 @@ viewController_loadView :: Ptr HNSViewControllerObj -> IO ()
 viewController_loadView viewController =
                                 do
                                     appModelInit (modelHistoryStart (MousePos 0 0))
+                                    
+                                    viewController_loadViewButtons viewController
+                                    viewController_loadViewScrollableContent viewController
 
+
+
+
+viewController_loadViewButtons :: Ptr HNSViewControllerObj -> IO ()
+
+viewController_loadViewButtons viewController =
+                                do
                                     view <- nsViewController_view viewController
                                     viewFrame <- nsView_frame view
                                     button <- nsButtonCreate
@@ -65,6 +77,32 @@ viewController_loadView viewController =
 
                                     view_setUserButton view button
                                     nsRelease button
+
+
+
+viewController_loadViewScrollableContent :: Ptr HNSViewControllerObj -> IO ()
+
+viewController_loadViewScrollableContent viewController =
+                                do
+                                    scrollView <- nsScrollViewCreate
+                                    nsScrollView_setHasHorizontalScroller scrollView True
+                                    nsScrollView_setHasVerticalScroller scrollView True
+                                  
+                                    view <- nsViewController_view viewController  
+                                    (HNSRect _ _ w h) <- nsView_frame view
+                                    nsView_setFrame scrollView (scrollViewFrame w h)
+                                    nsView_addSubview view scrollView
+
+                                    docView <- contentViewCreate
+                                    nsScrollView_setDocumentView scrollView docView
+                                    nsView_setFrame docView (HNSRect 0 0 800 800)
+                                    nsRelease docView
+
+                                    view_setScrollView view scrollView
+                                    nsRelease scrollView
+
+
+
 
 
 
