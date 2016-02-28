@@ -8,6 +8,7 @@ module Cocoa.Foundation.HNSGeometry
 (
     HNSRect(..)
 ,   HNSSize(..)
+,   HNSPoint(..)
 )
 where
 
@@ -27,6 +28,21 @@ instance Storable HNSSize where
     poke ptr (HNSSize w h) = do
         pokeByteOff ptr 0 w
         pokeByteOff ptr 8 h
+
+
+
+
+data HNSPoint = HNSPoint Double Double
+
+instance Storable HNSPoint where
+    alignment _ = 8
+    sizeOf _    = 16
+    peek ptr    = HNSPoint
+        <$> peekByteOff ptr 0
+        <*> peekByteOff ptr 8
+    poke ptr (HNSPoint x y) = do
+        pokeByteOff ptr 0 x
+        pokeByteOff ptr 8 y
 
         
 

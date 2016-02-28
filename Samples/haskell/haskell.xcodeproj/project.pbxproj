@@ -37,6 +37,12 @@
 		2CA92F701C75CA06001F9A89 /* HNSObject.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA92F6F1C75CA06001F9A89 /* HNSObject.o */; };
 		2CCE7BDB1C7D9B380020C2A6 /* HNSMenuItem.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCE7BDA1C7D9B380020C2A6 /* HNSMenuItem.o */; };
 		2CCE7BDD1C7D9B5A0020C2A6 /* AppDelegate.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCE7BDC1C7D9B5A0020C2A6 /* AppDelegate.o */; };
+		2CCE7BE01C8140C90020C2A6 /* HNSScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE7BDF1C8140C90020C2A6 /* HNSScrollView.m */; };
+		2CCE7BE21C8146380020C2A6 /* HNSScrollView.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCE7BE11C8146380020C2A6 /* HNSScrollView.o */; };
+		2CCE7BE61C8148EC0020C2A6 /* HNSMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE7BE51C8148EC0020C2A6 /* HNSMutableDictionary.m */; };
+		2CCE7BE91C8228CB0020C2A6 /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE7BE81C8228CB0020C2A6 /* ContentView.m */; };
+		2CCE7BEB1C825C5D0020C2A6 /* ContentView.o in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCE7BEA1C825C5D0020C2A6 /* ContentView.o */; };
+		2CCE7BEE1C825E5F0020C2A6 /* HNSGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCE7BED1C825E5F0020C2A6 /* HNSGeometry.m */; };
 		983F33201C6C025900BB4A75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F331F1C6C025900BB4A75 /* AppDelegate.m */; };
 		983F33231C6C025900BB4A75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F33221C6C025900BB4A75 /* main.m */; };
 		983F33261C6C025900BB4A75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F33251C6C025900BB4A75 /* ViewController.m */; };
@@ -91,6 +97,17 @@
 		2CA92F6F1C75CA06001F9A89 /* HNSObject.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSObject.o; path = ../../HaskellCocoa/Cocoa/Runtime/HNSObject.o; sourceTree = "<group>"; };
 		2CCE7BDA1C7D9B380020C2A6 /* HNSMenuItem.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSMenuItem.o; path = ../../HaskellCocoa/Cocoa/AppKit/HNSMenuItem.o; sourceTree = "<group>"; };
 		2CCE7BDC1C7D9B5A0020C2A6 /* AppDelegate.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = AppDelegate.o; path = "haskell/Haskell-Cocoa-App/AppDelegate.o"; sourceTree = "<group>"; };
+		2CCE7BDE1C8140C90020C2A6 /* HNSScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSScrollView.h; sourceTree = "<group>"; };
+		2CCE7BDF1C8140C90020C2A6 /* HNSScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSScrollView.m; sourceTree = "<group>"; };
+		2CCE7BE11C8146380020C2A6 /* HNSScrollView.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSScrollView.o; path = ../../HaskellCocoa/Cocoa/AppKit/HNSScrollView.o; sourceTree = "<group>"; };
+		2CCE7BE41C8148EC0020C2A6 /* HNSMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSMutableDictionary.h; sourceTree = "<group>"; };
+		2CCE7BE51C8148EC0020C2A6 /* HNSMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSMutableDictionary.m; sourceTree = "<group>"; };
+		2CCE7BE71C8228CB0020C2A6 /* ContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentView.h; sourceTree = "<group>"; };
+		2CCE7BE81C8228CB0020C2A6 /* ContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentView.m; sourceTree = "<group>"; };
+		2CCE7BEA1C825C5D0020C2A6 /* ContentView.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = ContentView.o; path = "haskell/Haskell-Cocoa-App/ContentView.o"; sourceTree = "<group>"; };
+		2CCE7BEC1C825E5F0020C2A6 /* HNSGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSGeometry.h; sourceTree = "<group>"; };
+		2CCE7BED1C825E5F0020C2A6 /* HNSGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSGeometry.m; sourceTree = "<group>"; };
+		2CCE7BEF1C82616C0020C2A6 /* ContentView_stub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentView_stub.h; sourceTree = "<group>"; };
 		983F331B1C6C025900BB4A75 /* haskell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haskell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983F331E1C6C025900BB4A75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		983F331F1C6C025900BB4A75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -113,6 +130,7 @@
 				2CA92F581C744684001F9A89 /* libiconv.tbd in Frameworks */,
 				2C7E90E61C763A0300923016 /* HNSApp.o in Frameworks */,
 				98D91AE01C7E9D70008DC42C /* HModelUndoRedo.o in Frameworks */,
+				2CCE7BE21C8146380020C2A6 /* HNSScrollView.o in Frameworks */,
 				2C338FBB1C6FE394003A138A /* ViewController.o in Frameworks */,
 				2CA92F5D1C7446A4001F9A89 /* HNSButton.o in Frameworks */,
 				2CA92F701C75CA06001F9A89 /* HNSObject.o in Frameworks */,
@@ -129,6 +147,7 @@
 				2C7E90F81C79972700923016 /* HNSColor.o in Frameworks */,
 				2C7E90DE1C75CE5A00923016 /* HNSAlert.o in Frameworks */,
 				2CA92F671C75C152001F9A89 /* HNSControl.o in Frameworks */,
+				2CCE7BEB1C825C5D0020C2A6 /* ContentView.o in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				2C338FB91C6FE341003A138A /* ViewController_stub.h */,
+				2CCE7BEF1C82616C0020C2A6 /* ContentView_stub.h */,
 				2C7E90F11C79298500923016 /* View_stub.h */,
 			);
 			name = "Haskell-Cocoa-App";
@@ -167,6 +187,7 @@
 		2CA92F461C74440C001F9A89 /* Cocoa */ = {
 			isa = PBXGroup;
 			children = (
+				2CCE7BE31C8148D30020C2A6 /* Foundation */,
 				2CA92F6B1C75C974001F9A89 /* Runtime */,
 				2CA92F471C744414001F9A89 /* AppKit */,
 			);
@@ -188,6 +209,8 @@
 				2CA92F4B1C74443F001F9A89 /* HNSColor.m */,
 				2CA92F4E1C74443F001F9A89 /* HNSView.h */,
 				2CA92F4F1C74443F001F9A89 /* HNSView.m */,
+				2CCE7BDE1C8140C90020C2A6 /* HNSScrollView.h */,
+				2CCE7BDF1C8140C90020C2A6 /* HNSScrollView.m */,
 				2CA92F501C74443F001F9A89 /* HNSViewController.h */,
 				2CA92F511C74443F001F9A89 /* HNSViewController.m */,
 				2C7E90E21C7638DF00923016 /* HNSWindow.h */,
@@ -207,6 +230,17 @@
 				2CA92F6D1C75C99B001F9A89 /* HNSObject.m */,
 			);
 			path = Runtime;
+			sourceTree = "<group>";
+		};
+		2CCE7BE31C8148D30020C2A6 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				2CCE7BEC1C825E5F0020C2A6 /* HNSGeometry.h */,
+				2CCE7BED1C825E5F0020C2A6 /* HNSGeometry.m */,
+				2CCE7BE41C8148EC0020C2A6 /* HNSMutableDictionary.h */,
+				2CCE7BE51C8148EC0020C2A6 /* HNSMutableDictionary.m */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		983F33121C6C025900BB4A75 = {
@@ -237,6 +271,8 @@
 				983F33251C6C025900BB4A75 /* ViewController.m */,
 				2C7E90EC1C7921D400923016 /* View.h */,
 				2C7E90ED1C7921D400923016 /* View.m */,
+				2CCE7BE71C8228CB0020C2A6 /* ContentView.h */,
+				2CCE7BE81C8228CB0020C2A6 /* ContentView.m */,
 				983F33271C6C025900BB4A75 /* Assets.xcassets */,
 				983F33291C6C025900BB4A75 /* Main.storyboard */,
 				983F332C1C6C025900BB4A75 /* Info.plist */,
@@ -265,6 +301,7 @@
 				2CA92F611C7447AD001F9A89 /* HNSGeometry.o */,
 				2CA92F591C7446A4001F9A89 /* HNSButton.o */,
 				2CA92F5B1C7446A4001F9A89 /* HNSView.o */,
+				2CCE7BE11C8146380020C2A6 /* HNSScrollView.o */,
 				2CA92F661C75C152001F9A89 /* HNSControl.o */,
 				2CA92F5C1C7446A4001F9A89 /* HNSViewController.o */,
 				2C7E90E71C76530E00923016 /* HNSWindow.o */,
@@ -276,6 +313,7 @@
 				2CCE7BDC1C7D9B5A0020C2A6 /* AppDelegate.o */,
 				2C338FBA1C6FE394003A138A /* ViewController.o */,
 				2C7E90EF1C7926DE00923016 /* View.o */,
+				2CCE7BEA1C825C5D0020C2A6 /* ContentView.o */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -349,15 +387,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CCE7BE91C8228CB0020C2A6 /* ContentView.m in Sources */,
 				2C7E90EE1C7921D400923016 /* View.m in Sources */,
 				2C2343911C7C2C49005EEA7B /* HModel.m in Sources */,
 				2C7E90F41C7990D200923016 /* HNSBezierPath.m in Sources */,
 				2CA92F561C74443F001F9A89 /* HNSViewController.m in Sources */,
+				2CCE7BEE1C825E5F0020C2A6 /* HNSGeometry.m in Sources */,
 				983F33261C6C025900BB4A75 /* ViewController.m in Sources */,
 				985686E31C7D4A43004549C7 /* HNSMenuItem.m in Sources */,
+				2CCE7BE01C8140C90020C2A6 /* HNSScrollView.m in Sources */,
 				2CA92F651C75A9B3001F9A89 /* HNSControl.m in Sources */,
 				983F33231C6C025900BB4A75 /* main.m in Sources */,
 				983F33201C6C025900BB4A75 /* AppDelegate.m in Sources */,
+				2CCE7BE61C8148EC0020C2A6 /* HNSMutableDictionary.m in Sources */,
 				2CA92F531C74443F001F9A89 /* HNSColor.m in Sources */,
 				2CA92F551C74443F001F9A89 /* HNSView.m in Sources */,
 				2C7E90E41C7638DF00923016 /* HNSWindow.m in Sources */,
