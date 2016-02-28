@@ -21,6 +21,7 @@ import Cocoa.AppKit.HNSBezierPath
 import Cocoa.AppKit.HNSMenuItem
 
 import Model
+import ContentView
 import AppDelegate
 
 
@@ -162,7 +163,11 @@ view_mouseDown :: Ptr HNSViewObj -> Double -> Double -> IO ()
 
 view_mouseDown view x y =
                 do
-                    appModelUpdate (\m -> modelAppend m (MousePos x y))
+                    scrollView <- view_scrollView view
+                    docView <- (nsScrollView_documentView scrollView :: IO (Ptr ContentViewObj))
+                    (HNSPoint x' y') <- nsView_convertPointFromWindow docView (HNSPoint x y)
+
+                    appModelUpdate (\m -> modelAppend m (MousePos x' y'))
                     nsView_setNeedsDisplay view True
 
 

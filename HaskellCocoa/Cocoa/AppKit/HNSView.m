@@ -75,6 +75,19 @@ HsPtr hns_view_convertPointFromView(HsPtr view, HsDouble x, HsDouble y, HsPtr fr
 }
 
 
+HsPtr hns_view_convertPointFromWindow(HsPtr view, HsDouble x, HsDouble y)
+{
+    NSView* pView = (__bridge NSView *)(view);
+    NSPoint point = NSMakePoint(x, y);
+    
+    static struct HsPoint result;
+    NSPoint resPoint = [pView convertPoint:point fromView:nil];
+    result.x = resPoint.x;
+    result.y = resPoint.y;
+    return &result;
+}
+
+
 HsPtr hns_view_frame(HsPtr view)
 {
     static struct HsRect result;

@@ -36,6 +36,11 @@ void hns_scrollView_setDocumentView(HsPtr view, HsPtr docView)
     [pView setDocumentView:pDocView];
 }
 
+HsPtr hns_scrollView_documentView(HsPtr view)
+{
+    NSScrollView* pView = (__bridge NSScrollView*)view;
+    return (__bridge HsPtr)pView.documentView;
+}
 
 
 void hns_scrollView_setHasHorizontalScroller(HsPtr view, bool b)
