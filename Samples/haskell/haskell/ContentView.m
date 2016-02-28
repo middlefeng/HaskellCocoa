@@ -25,6 +25,14 @@
                          dirtyRect.size.height);
 }
 
+
+- (void)mouseDown:(NSEvent *)theEvent
+{
+    NSPoint loc = theEvent.locationInWindow;
+    contentView_mouseDown((__bridge HsPtr)self, loc.x, loc.y);
+}
+
+
 @end
 
 
