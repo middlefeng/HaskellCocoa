@@ -23,15 +23,17 @@ import Cocoa.AppKit.HNSView
 class (HNSObject a) => HNSViewController a where
 
     nsViewController_view :: Ptr a -> IO (Ptr HNSViewObj)
+    nsViewController_view = hns_viewController_view
+
+
 
 
 data HNSViewControllerObj = HNSViewControllerObj
 
 instance HNSObject HNSViewControllerObj where
-
 instance HNSViewController HNSViewControllerObj where
 
-    nsViewController_view = hns_viewController_view
+    
 
 
 
