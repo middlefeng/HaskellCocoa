@@ -15,7 +15,7 @@
 
 @interface View()
 
-@property (nonatomic, weak) NSButton* userButton;
+@property (nonatomic, weak) NSScrollView* scrollView;
 
 @end
 
@@ -24,6 +24,7 @@
 
 
 @implementation View
+
 
 - (void)drawRect:(NSRect)dirtyRect
 {
@@ -48,16 +49,17 @@
 
 
 
-void view_setUserButton(HsPtr view, HsPtr button)
+void view_setScrollView(HsPtr view, HsPtr scrollView)
 {
     View* pView = (__bridge View*)view;
-    NSButton* pButton = (__bridge NSButton*)button;
-    pView.userButton = pButton;
+    NSScrollView* pScrollView = (__bridge NSScrollView*)scrollView;
+    pView.scrollView = pScrollView;
 }
 
 
-HsPtr view_userButton(HsPtr view)
+HsPtr view_scrollView(HsPtr view)
 {
     View* pView = (__bridge View*)view;
-    return (__bridge HsPtr)pView.userButton;
+    return (__bridge HsPtr)pView.scrollView;
 }
+

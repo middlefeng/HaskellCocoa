@@ -25,63 +25,43 @@ import Model
 
 
 
-foreign import ccall "wrapper" mkFreeFunPtr :: (Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()) ->
-                                                IO (FunPtr (Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()))
 
 
 
 
-viewController_testButtonAction :: Ptr HNSButtonObj -> Ptr HNSViewControllerObj -> IO ()
+data ViewControllerObj
 
-viewController_testButtonAction button _ = 
-                            let buttonLabel button' =
-                                    nsButton_setTitle button' "Tested" in
-                                do
-                                    alert <- nsAlertCreate
-                                    window <- nsApp_keyWindow
-                                    nsAlert_setMessageText alert "Test Alert."
-                                    nsAlert_beginSheetModalForWindow alert window (\_ _ -> buttonLabel button)
+
+
+instance HNSViewController ViewControllerObj where
+instance HNSObject ViewControllerObj where
 
 
 
 
-viewController_loadView :: Ptr HNSViewControllerObj -> IO ()
+
+viewController_loadView :: Ptr ViewControllerObj -> IO ()
 
 viewController_loadView viewController =
-                                do
-                                    appModelInit (modelHistoryStart (MousePos 0 0))
-
-                                    view <- nsViewController_view viewController
-                                    viewFrame <- nsView_frame view
-                                    button <- nsButtonCreate
-
-                                    buttonAction <- mkFreeFunPtr viewController_testButtonAction
-                                    nsControl_setAction button viewController buttonAction
-
-                                    nsButton_setBezelStyle button HNSRounded
-                                    nsButton_setTitle button "Test Button"
-                                    nsView_setFrame button (buttonFrame 100.0 30.0 viewFrame)
-                                    nsView_addSubview view button
-
-                                    view_setUserButton view button
-                                    nsRelease button
-
-
-
-viewController_viewWillTransitionToSize :: Ptr HNSViewControllerObj -> Double -> Double -> IO ()
-
-viewController_viewWillTransitionToSize viewController h w =
-                            let viewFrame = HNSRect 0 0 h w in
-                                do
-                                    view <- nsViewController_view viewController
-                                    button <- view_userButton view
-                                    nsView_setFrame button viewFrame
+	do
+		nsView <- nsViewController_view viewController
+		return ()
+		let view = castPtr nsView :: Ptr ViewObj
+		view_addProgram view
 
 
 
 
 
-viewController_viewLoaded :: Ptr HNSViewControllerObj -> IO ()
+viewController_viewWillTransitionToSize :: Ptr ViewControllerObj -> Double -> Double -> IO ()
+
+viewController_viewWillTransitionToSize _ _ _ = do return ()
+
+
+
+
+
+viewController_viewLoaded :: Ptr ViewControllerObj -> IO ()
 
 viewController_viewLoaded _ = do return ()
 
@@ -89,8 +69,8 @@ viewController_viewLoaded _ = do return ()
 
 
 
-foreign export ccall viewController_loadView :: Ptr HNSViewControllerObj -> IO ()
-foreign export ccall viewController_viewLoaded :: Ptr HNSViewControllerObj -> IO ()
-foreign export ccall viewController_viewWillTransitionToSize :: Ptr HNSViewControllerObj -> Double -> Double -> IO ()
+foreign export ccall viewController_loadView :: Ptr ViewControllerObj -> IO ()
+foreign export ccall viewController_viewLoaded :: Ptr ViewControllerObj -> IO ()
+foreign export ccall viewController_viewWillTransitionToSize :: Ptr ViewControllerObj -> Double -> Double -> IO ()
 
 

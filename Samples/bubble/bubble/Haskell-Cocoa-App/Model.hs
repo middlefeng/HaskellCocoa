@@ -7,7 +7,11 @@
 module Model
 (
     AppModel
-,   MousePos(..)
+,   AppModelSnapshot(..)
+,   CanvasSize(..)
+,   Bubble(..)
+,   Radius
+,   BubbleLocation(..)
 ,   appModelInit
 ,   appModelUpdate
 ,   appModelQuery
@@ -23,8 +27,19 @@ import AppFoundation.HModelUndoRedo
 
 
 
-data MousePos = MousePos Double Double
-type AppModel = HistoryModel MousePos
+data CanvasSize = CanvasSize Double Double
+
+data Bubble = Bubble Radius BubbleLocation
+type Radius = Double
+data BubbleLocation = BubbleLocation Double Double
+
+data AppModelSnapshot = AppModelSnapshot
+                {
+                    modelSize :: CanvasSize
+                ,   modelEntities :: [Bubble]
+                }
+
+type AppModel = HistoryModel AppModelSnapshot
 
 
 
