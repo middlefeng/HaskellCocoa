@@ -22,6 +22,16 @@ HsPtr hns_BezierPathWithRoundedRect(double x, double y, double w, double h,
 }
 
 
+
+HsPtr hns_BezierPathWithOvalInRect(double x, double y, double w, double h)
+{
+    NSRect rect = NSMakeRect(x, y, w, h);
+    NSBezierPath* path = [NSBezierPath bezierPathWithOvalInRect:rect];
+    return (__bridge HsPtr)path;
+}
+
+
+
 void hns_bezierPath_stroke(HsPtr path)
 {
     NSBezierPath* pPath = (__bridge NSBezierPath*)path;
