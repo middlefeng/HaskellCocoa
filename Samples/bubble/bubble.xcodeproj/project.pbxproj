@@ -105,6 +105,8 @@
 		2CC78A2F1C8B9F2100D8FA61 /* HNSScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNSScrollView.h; sourceTree = "<group>"; };
 		2CC78A301C8B9F2100D8FA61 /* HNSScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNSScrollView.m; sourceTree = "<group>"; };
 		2CC78A321C8BA34E00D8FA61 /* Canvas.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = Canvas.o; path = "bubble/Haskell-Cocoa-App/Canvas.o"; sourceTree = "<group>"; };
+		2CC78A341C8C0C5B00D8FA61 /* AppDelegate_stub.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate_stub.h; sourceTree = "<group>"; };
+		2CC78A351C8D033900D8FA61 /* Canvas_stub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Canvas_stub.h; sourceTree = "<group>"; };
 		2CCE7BDA1C7D9B380020C2A6 /* HNSMenuItem.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = HNSMenuItem.o; path = ../../HaskellCocoa/Cocoa/AppKit/HNSMenuItem.o; sourceTree = "<group>"; };
 		2CCE7BDC1C7D9B5A0020C2A6 /* AppDelegate.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = AppDelegate.o; path = "bubble/Haskell-Cocoa-App/AppDelegate.o"; sourceTree = "<group>"; };
 		983F331B1C6C025900BB4A75 /* Bubble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bubble.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +177,8 @@
 		2C338FB71C6FE224003A138A /* Haskell-Cocoa-App */ = {
 			isa = PBXGroup;
 			children = (
+				2CC78A351C8D033900D8FA61 /* Canvas_stub.h */,
+				2CC78A341C8C0C5B00D8FA61 /* AppDelegate_stub.h */,
 				2C338FB91C6FE341003A138A /* ViewController_stub.h */,
 				2C7E90F11C79298500923016 /* View_stub.h */,
 			);

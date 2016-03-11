@@ -13,16 +13,10 @@ import AppFoundation.HModelUndoRedo
 import Cocoa.Foundation.HNSGeometry
 
 import Cocoa.Runtime.HNSObject
-import Cocoa.AppKit.HNSApp
 import Cocoa.AppKit.HNSView
 import Cocoa.AppKit.HNSScrollView
-import Cocoa.AppKit.HNSButton
-import Cocoa.AppKit.HNSColor
-import Cocoa.AppKit.HNSBezierPath
-import Cocoa.AppKit.HNSMenuItem
 
 import Model
-import AppDelegate
 import Canvas
 
 
@@ -46,6 +40,11 @@ view_addProgram view =
         view_setScrollView view scrollView
         nsView_addSubview view scrollView
 
+        canvas <- canvasCreate
+        nsScrollView_setDocumentView scrollView canvas
+
+        nsRelease scrollView
+        nsRelease canvas
 
 
 
@@ -55,14 +54,21 @@ view_layoutSubViews :: Ptr ViewObj -> Double -> Double -> IO ()
 
 view_layoutSubViews view w h =
     do
-        scrollView <- view_scrollView view
-        nsView_setFrame scrollView (HNSRect 1 1 (w - 1) (h - 1))
-        nsScrollView_setHasHorizontalScroller scrollView True
-        nsScrollView_setHasVerticalScroller scrollView True
+        appModelQuery layout where
+            layout :: AppModel -> IO ()
+            layout model =
+                do
+                    scrollView <- view_scrollView view
+                    nsView_setFrame scrollView (HNSRect 1 1 (w - 1) (h - 1))
+                    nsScrollView_setHasHorizontalScroller scrollView True
+                    nsScrollView_setHasVerticalScroller scrollView True
 
-        canvas <- canvasCreate
-        nsView_setFrame canvas (HNSRect 0 0 800 800)
-        nsScrollView_setDocumentView scrollView canvas
+                    let snapshot = historyModelCurrent model
+                    let (CanvasSize canW canH) = modelSize snapshot
+
+                    canvas <- (nsScrollView_documentView scrollView :: IO (Ptr HNSViewObj))
+                    nsView_setFrame canvas (HNSRect 0 0 canW canH)
+                    
 
 
 
@@ -81,9 +87,11 @@ view_drawRect view _ _ _ _ =
 
 
 
+
+
 view_mouseDown :: Ptr ViewObj -> Double -> Double -> IO ()
 
-view_mouseDown view x y = do return ()
+view_mouseDown _ _ _ = do return ()
 
 
 

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "HsFFI.h"
+#import "AppDelegate_stub.h"
 
 
 
@@ -24,8 +25,9 @@
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+- (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
+    appDelegate_applicationWillFinishLaunching();
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification

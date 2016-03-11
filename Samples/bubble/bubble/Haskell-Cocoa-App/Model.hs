@@ -29,8 +29,10 @@ import AppFoundation.HModelUndoRedo
 
 data CanvasSize = CanvasSize Double Double
 
-data Bubble = Bubble Radius BubbleLocation
+data Bubble = Bubble Radius BubbleLocation Selected
+
 type Radius = Double
+type Selected = Bool
 data BubbleLocation = BubbleLocation Double Double
 
 data AppModelSnapshot = AppModelSnapshot
@@ -50,8 +52,8 @@ appModelName = "default"
 
 
 
-appModelInit :: AppModel -> IO ()
-appModelInit m = modelInit m appModelName
+appModelInit :: AppModelSnapshot -> IO ()
+appModelInit s = modelInit (HistoryModel s Nothing Nothing) appModelName
 
 
 
