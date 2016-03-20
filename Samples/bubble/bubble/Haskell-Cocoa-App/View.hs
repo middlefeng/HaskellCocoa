@@ -41,6 +41,7 @@ view_addProgram view =
         nsView_addSubview view scrollView
 
         canvas <- canvasCreate
+        canvas_setZoomLevel canvas 2.0
         nsScrollView_setDocumentView scrollView canvas
 
         nsRelease scrollView
@@ -66,8 +67,9 @@ view_layoutSubViews view w h =
                     let snapshot = historyModelCurrent model
                     let (CanvasSize canW canH) = modelSize snapshot
 
-                    canvas <- (nsScrollView_documentView scrollView :: IO (Ptr HNSViewObj))
-                    nsView_setFrame canvas (HNSRect 0 0 canW canH)
+                    canvas <- (nsScrollView_documentView scrollView :: IO (Ptr CanvasObj))
+                    zoomLevel <- canvas_zoomLevel canvas
+                    nsView_setFrame canvas (HNSRect 0 0 (canW * zoomLevel) (canH * zoomLevel))
                     
 
 

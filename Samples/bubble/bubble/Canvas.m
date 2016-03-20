@@ -10,6 +10,14 @@
 #import "HNSObject.h"
 #import "Canvas_stub.h"
 
+
+@interface Canvas()
+
+@property (nonatomic, assign) CGFloat zoomLevel;
+
+@end
+
+
 @implementation Canvas
 
 - (void)drawRect:(NSRect)dirtyRect
@@ -35,3 +43,17 @@ HsPtr canvasCreate()
 
 
 
+
+
+void canvas_setZoomLevel(HsPtr canvas, HsDouble zoomLevel)
+{
+    Canvas* pCanvas = (__bridge Canvas*)canvas;
+    pCanvas.zoomLevel = zoomLevel;
+}
+
+
+HsDouble canvas_zoomLevel(HsPtr canvas)
+{
+    Canvas* pCanvas = (__bridge Canvas*)canvas;
+    return pCanvas.zoomLevel;
+}
